@@ -1,0 +1,19 @@
+package com.shopme.util;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public class FileUploadUtil {
+
+	public static void saveFile(String uploadDirectory, String fileName, MultipartFile multipartFile) {
+
+		Path uploadPath = Paths.get(uploadDirectory);
+
+		if (Files.exists(uploadPath) == false) {
+			
+		}
+	}
+}

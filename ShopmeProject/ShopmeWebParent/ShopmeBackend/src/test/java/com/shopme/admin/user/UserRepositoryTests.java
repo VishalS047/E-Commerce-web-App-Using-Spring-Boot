@@ -10,12 +10,15 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.annotation.Rollback;
 
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 
-@DataJpaTest
+@DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(value = false)
 public class UserRepositoryTests {
@@ -105,5 +108,33 @@ public class UserRepositoryTests {
 		Long countById = this.userRepository.countById(id);
 		System.out.println(countById);
 		assertThat(countById).isNotNull();
+	}
+	
+	@Test
+	public void testDisabledUser() {
+		Integer id = 121;
+		this.userRepository.updateEnabledStatus(id, false);
+		
+	}
+	
+	@Test
+	public void testEnabledUser() {
+		Integer id = 121;
+		this.userRepository.updateEnabledStatus(id, true);
+	}
+	
+	@Test
+	public void testListFirstPage() {
+		int pageNumber = 0;
+		int pagesize = 5;
+		Pageable pageable = PageRequest.of(pageNumber, pagesize);
+		
+		Page<User> page = this.userRepository.findAll(pageable);
+		
+		List<User> listContent = page.getContent();
+		
+		listContent.forEach(user ->System.out.println(user));
+		
+		assertThat(listContent.size()).isEqualTo(pagesize);
 	}
 }

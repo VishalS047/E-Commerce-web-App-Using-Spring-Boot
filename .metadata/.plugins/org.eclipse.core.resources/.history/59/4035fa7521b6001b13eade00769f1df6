@@ -1,0 +1,13 @@
+.colorEdit {
+	color: green;
+}
+.colorDelete {
+	color: red;
+}
+.colorEnabled{
+	color: green;
+}
+.decor {
+	text-decoration: none;
+	width: 100px;
+}

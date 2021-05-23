@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "UserTable")
@@ -18,7 +19,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int id;
+	private Integer id;
 	@Column(length = 128, nullable = false, unique = true)
 	private String email;
 
@@ -41,7 +42,7 @@ public class User {
 	private String photots;
 
 	private boolean enabled;
-
+		
 	@ManyToMany
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
 	private Set<Role> roles = new HashSet<>();
@@ -59,11 +60,11 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -125,5 +126,13 @@ public class User {
 
 	public void addRole(Role role) {
 		this.roles.add(role);
+	}
+
+	@Transient
+	public String getPhotosImagePath() {
+		if (id == null || photots == null) 
+			return "/images/default.png";
+//		System.out.println("/userphotos/" + this.id + "/" + this.photots);
+		return "/userphotos/" + this.id + "/" + this.photots;
 	}
 }

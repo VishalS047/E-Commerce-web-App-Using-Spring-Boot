@@ -1,0 +1,6 @@
+.colorEdit {
+	color: green;
+}
+.colorDelete {
+	color: red;
+}

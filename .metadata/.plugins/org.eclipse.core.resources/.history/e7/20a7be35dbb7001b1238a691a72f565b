@@ -1,0 +1,16 @@
+package com.shopme.mvcconfiguration;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+public class SpringMvcConfiguration implements WebMvcConfigurer {
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		Path userPhotDirectory = Paths.get("user-photos");
+	}
+	
+}
