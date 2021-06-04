@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:fragment="page_header(title)">
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width initial-scale=1 ,minimum-scale=1.0">
+	
+		<title>[[${title}]]</title>
+	
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css" />
+	
+	<link rel="stylesheet" th:href="@{/fontawesome/all.css}" type="text/css" />
+	
+	<link rel="stylesheet" th:href="@{/css/style.css}" type="text/css" />
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/dist/jquery.min.js}"></script>
+
+	<script type="text/javascript" th:src="@{/js/common.js}"></script>
+	
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	
+	<script type="text/javascript" th:src="@{/webjars/sweetalert/sweetalert.min.js}"></script>
+	
+	<style>
+		.footer {
+  			  position: fixed;
+  			  left: 0;
+			  bottom: 0;
+			  width:100%;
+			  margin-top:20px;
+			  color: white;
+			  text-align: center;
+		}
+	</style>
+
+
+	
+	</head>
+	
+<body>
+	<th th:fragment="column_link(fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
+	
+	<a class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField='+ ${fieldName} + '&sortDir=' + ${sortField != fieldName ? sortDir : reverseDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${columnLabel}]]</a>
+
+		<span th:if="${sortField == fieldName}"
+		th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'} "></span>
+	</th>
+	
+	<a th:fragment="page_link(pageNum, label)"
+	 class="page-link" th:href="@{'/users/page/'+ ${pageNum} +'?sortField=' +${sortField} +'&sortDir=' + ${sortDir}}">[[${label}]]</a>
+	 
+	 <div class="footer bg-dark " th:fragment="footer">
+			<h6>Shopify Control Panel - Copyright &copy; Shopify</h6>
+	 </div>
+	
+</body>
+</html>

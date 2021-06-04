@@ -1,0 +1,341 @@
+2021-05-30 04:54:14.798  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 04:54:14.799  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 04:54:15.107  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 04:54:15.127  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2021-05-30 04:54:15.316  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 04:54:15.317  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 04:54:15.317  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 04:54:15.361  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 04:54:15.361  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 557 ms
+2021-05-30 04:54:15.418  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 04:54:15.425  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 04:54:15.450  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 04:54:15.452  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 04:54:15.570  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 04:54:15.570  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:54:15.594  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 04:54:15.734  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 04:54:15.783  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 04:54:15.783  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 04:54:15.783  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 04:54:15.783  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 04:54:15.792  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a9900c9, org.springframework.security.web.context.SecurityContextPersistenceFilter@5af4e0ca, org.springframework.security.web.header.HeaderWriterFilter@c1b092, org.springframework.security.web.csrf.CsrfFilter@320974b, org.springframework.security.web.authentication.logout.LogoutFilter@4f4214c1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@48f33dfc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f8b0cac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22c36cef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e2ead5e, org.springframework.security.web.session.SessionManagementFilter@5d69bee3, org.springframework.security.web.access.ExceptionTranslationFilter@572445d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53a9adde]
+2021-05-30 04:54:15.856  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:54:15.885  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 04:54:16.236  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 04:54:16.243  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.504 seconds (JVM running for 2473.463)
+2021-05-30 04:54:16.245  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 04:55:21.548  INFO 20796 --- [Thread-99] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:55:21.550  INFO 20796 --- [Thread-99] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:55:21.551  INFO 20796 --- [Thread-99] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 04:55:21.567  INFO 20796 --- [Thread-99] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 04:55:21.744  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 04:55:21.745  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 04:55:22.060  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 04:55:22.074  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2021-05-30 04:55:22.241  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 04:55:22.242  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 04:55:22.242  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 04:55:22.282  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 04:55:22.282  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 532 ms
+2021-05-30 04:55:22.356  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 04:55:22.363  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 04:55:22.386  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 04:55:22.386  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 04:55:22.529  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 04:55:22.529  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:55:22.549  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 04:55:22.681  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 04:55:22.723  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 04:55:22.723  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 04:55:22.723  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 04:55:22.723  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 04:55:22.734  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17214847, org.springframework.security.web.context.SecurityContextPersistenceFilter@2153d0a3, org.springframework.security.web.header.HeaderWriterFilter@6c6cc839, org.springframework.security.web.csrf.CsrfFilter@96d4692, org.springframework.security.web.authentication.logout.LogoutFilter@91184fe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@23e314f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3483738a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ea44823, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c81a600, org.springframework.security.web.session.SessionManagementFilter@426957aa, org.springframework.security.web.access.ExceptionTranslationFilter@212eae1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6aca7ea3]
+2021-05-30 04:55:22.771  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:55:22.796  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 04:55:23.132  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 04:55:23.138  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.47 seconds (JVM running for 2540.359)
+2021-05-30 04:55:23.140  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 04:55:46.132  INFO 20796 --- [Thread-107] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:55:46.133  INFO 20796 --- [Thread-107] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:55:46.134  INFO 20796 --- [Thread-107] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 04:55:46.150  INFO 20796 --- [Thread-107] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 04:55:46.373  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 04:55:46.374  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 04:55:46.683  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 04:55:46.698  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2021-05-30 04:55:46.925  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 04:55:46.929  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 04:55:46.929  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 04:55:46.994  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 04:55:46.994  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 612 ms
+2021-05-30 04:55:47.038  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 04:55:47.044  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 04:55:47.062  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 04:55:47.063  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 04:55:47.197  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 04:55:47.197  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:55:47.219  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 04:55:47.360  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 04:55:47.403  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 04:55:47.404  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 04:55:47.404  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 04:55:47.404  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 04:55:47.417  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fe03446, org.springframework.security.web.context.SecurityContextPersistenceFilter@12f2454e, org.springframework.security.web.header.HeaderWriterFilter@4bd3e3b6, org.springframework.security.web.csrf.CsrfFilter@70efee, org.springframework.security.web.authentication.logout.LogoutFilter@3390d125, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3db149d5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24d73c06, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@704db579, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@951170f, org.springframework.security.web.session.SessionManagementFilter@15fad780, org.springframework.security.web.access.ExceptionTranslationFilter@165418fe, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@430d4b00]
+2021-05-30 04:55:47.464  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:55:47.480  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 04:55:47.796  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 04:55:47.803  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.496 seconds (JVM running for 2565.023)
+2021-05-30 04:55:47.805  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 04:55:58.479  INFO 20796 --- [Thread-113] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:55:58.480  INFO 20796 --- [Thread-113] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:55:58.481  INFO 20796 --- [Thread-113] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 04:55:58.494  INFO 20796 --- [Thread-113] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 04:55:58.663  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 04:55:58.664  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 04:55:58.901  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 04:55:58.914  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2021-05-30 04:55:59.053  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 04:55:59.055  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 04:55:59.055  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 04:55:59.118  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 04:55:59.118  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 450 ms
+2021-05-30 04:55:59.170  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 04:55:59.177  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 04:55:59.199  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 04:55:59.201  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 04:55:59.311  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 04:55:59.312  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:55:59.340  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 04:55:59.481  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 04:55:59.532  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 04:55:59.532  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 04:55:59.532  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 04:55:59.532  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 04:55:59.542  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@326aefc0, org.springframework.security.web.context.SecurityContextPersistenceFilter@9eb6910, org.springframework.security.web.header.HeaderWriterFilter@6004fa7b, org.springframework.security.web.csrf.CsrfFilter@417c1325, org.springframework.security.web.authentication.logout.LogoutFilter@5fcf4b4f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1569845b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fc4a84b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58d45eea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51ea80f5, org.springframework.security.web.session.SessionManagementFilter@282fb20b, org.springframework.security.web.access.ExceptionTranslationFilter@3e35019f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a85875a]
+2021-05-30 04:55:59.588  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:55:59.609  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 04:56:00.030  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 04:56:00.034  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.417 seconds (JVM running for 2577.254)
+2021-05-30 04:56:00.035  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:05:11.958  INFO 20796 --- [Thread-119] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:05:11.960  INFO 20796 --- [Thread-119] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:05:11.961  INFO 20796 --- [Thread-119] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:05:11.984  INFO 20796 --- [Thread-119] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 05:05:12.194  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 05:05:12.195  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 05:05:12.533  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 05:05:12.566  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2021-05-30 05:05:12.701  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 05:05:12.702  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 05:05:12.703  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 05:05:12.775  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 05:05:12.775  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 576 ms
+2021-05-30 05:05:12.816  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 05:05:12.822  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 05:05:12.904  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 05:05:12.906  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 05:05:13.020  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 05:05:13.020  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:05:13.038  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 05:05:13.131  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 05:05:13.158  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 05:05:13.159  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 05:05:13.159  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 05:05:13.159  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 05:05:13.167  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d692f56, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ebb881, org.springframework.security.web.header.HeaderWriterFilter@6b90652b, org.springframework.security.web.csrf.CsrfFilter@5ae8f95b, org.springframework.security.web.authentication.logout.LogoutFilter@54c47e02, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5f9d19f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5948ce68, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31195157, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@10e99e8f, org.springframework.security.web.session.SessionManagementFilter@1c54b871, org.springframework.security.web.access.ExceptionTranslationFilter@5651d549, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a73dc04]
+2021-05-30 05:05:13.198  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:05:13.219  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 05:05:13.597  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 05:05:13.604  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.452 seconds (JVM running for 3130.824)
+2021-05-30 05:05:13.606  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:05:49.032  INFO 20796 --- [Thread-125] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:05:49.033  INFO 20796 --- [Thread-125] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:05:49.034  INFO 20796 --- [Thread-125] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:05:49.045  INFO 20796 --- [Thread-125] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 05:05:49.210  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 05:05:49.211  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 05:05:49.479  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 05:05:49.491  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2021-05-30 05:05:49.702  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 05:05:49.705  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 05:05:49.705  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 05:05:49.773  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 05:05:49.773  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 557 ms
+2021-05-30 05:05:49.836  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 05:05:49.843  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 05:05:49.859  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 05:05:49.861  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 05:05:49.967  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 05:05:49.968  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:05:49.981  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 05:05:50.072  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 05:05:50.103  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 05:05:50.103  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 05:05:50.103  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 05:05:50.103  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 05:05:50.112  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ad0cb13, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d07a9b6, org.springframework.security.web.header.HeaderWriterFilter@53622e5b, org.springframework.security.web.csrf.CsrfFilter@7eb9f04c, org.springframework.security.web.authentication.logout.LogoutFilter@5dc3ceef, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1be86ad0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bed71a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39bf9876, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40b6f818, org.springframework.security.web.session.SessionManagementFilter@4c0d0beb, org.springframework.security.web.access.ExceptionTranslationFilter@5f0638b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10629412]
+2021-05-30 05:05:50.143  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:05:50.159  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 05:05:50.461  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 05:05:50.465  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.305 seconds (JVM running for 3167.685)
+2021-05-30 05:05:50.466  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:06:16.689  INFO 20796 --- [Thread-131] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:06:16.691  INFO 20796 --- [Thread-131] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:06:16.691  INFO 20796 --- [Thread-131] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:06:16.700  INFO 20796 --- [Thread-131] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 05:06:16.868  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 05:06:16.868  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 05:06:17.093  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 05:06:17.106  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2021-05-30 05:06:17.232  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 05:06:17.234  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 05:06:17.234  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 05:06:17.287  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 05:06:17.288  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 416 ms
+2021-05-30 05:06:17.338  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 05:06:17.345  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 05:06:17.361  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 05:06:17.362  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 05:06:17.480  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 05:06:17.481  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:06:17.499  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 05:06:17.614  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 05:06:17.652  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 05:06:17.653  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 05:06:17.653  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 05:06:17.653  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 05:06:17.662  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7beaf5c1, org.springframework.security.web.context.SecurityContextPersistenceFilter@31b95b35, org.springframework.security.web.header.HeaderWriterFilter@2d36a2a5, org.springframework.security.web.csrf.CsrfFilter@235329d1, org.springframework.security.web.authentication.logout.LogoutFilter@25f18810, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7860e2ac, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a02d343, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22b97d2c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f8ec554, org.springframework.security.web.session.SessionManagementFilter@b9ef636, org.springframework.security.web.access.ExceptionTranslationFilter@3587d6ef, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@715db53c]
+2021-05-30 05:06:17.717  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:06:17.735  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 05:06:18.090  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 05:06:18.094  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.261 seconds (JVM running for 3195.314)
+2021-05-30 05:06:18.096  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:06:37.034  INFO 20796 --- [Thread-137] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:06:37.035  INFO 20796 --- [Thread-137] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:06:37.037  INFO 20796 --- [Thread-137] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:06:37.045  INFO 20796 --- [Thread-137] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 05:06:37.209  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 05:06:37.210  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 05:06:37.459  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 05:06:37.474  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2021-05-30 05:06:37.663  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 05:06:37.665  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 05:06:37.665  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 05:06:37.727  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 05:06:37.727  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 513 ms
+2021-05-30 05:06:37.776  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 05:06:37.782  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 05:06:37.801  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 05:06:37.802  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 05:06:37.888  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 05:06:37.888  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:06:37.902  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 05:06:38.011  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 05:06:38.092  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 05:06:38.093  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 05:06:38.093  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 05:06:38.093  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 05:06:38.108  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@612892fc, org.springframework.security.web.context.SecurityContextPersistenceFilter@6bafeb84, org.springframework.security.web.header.HeaderWriterFilter@13ae1b60, org.springframework.security.web.csrf.CsrfFilter@40bcc14c, org.springframework.security.web.authentication.logout.LogoutFilter@75f8cc13, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5c8122d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@302a0e3d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53bc7643, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69517f1, org.springframework.security.web.session.SessionManagementFilter@4d3fe5ce, org.springframework.security.web.access.ExceptionTranslationFilter@106976ea, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@758202a2]
+2021-05-30 05:06:38.152  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:06:38.171  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 05:06:38.543  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 05:06:38.548  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.381 seconds (JVM running for 3215.768)
+2021-05-30 05:06:38.549  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:06:53.429  INFO 20796 --- [Thread-143] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:06:53.431  INFO 20796 --- [Thread-143] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:06:53.432  INFO 20796 --- [Thread-143] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:06:53.450  INFO 20796 --- [Thread-143] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 05:06:53.621  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 05:06:53.621  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 05:06:53.825  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 05:06:53.836  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2021-05-30 05:06:53.951  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 05:06:53.953  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 05:06:53.953  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 05:06:54.026  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 05:06:54.026  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 402 ms
+2021-05-30 05:06:54.065  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 05:06:54.071  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 05:06:54.089  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 05:06:54.090  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 05:06:54.182  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 05:06:54.182  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:06:54.195  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 05:06:54.325  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 05:06:54.365  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 05:06:54.365  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 05:06:54.365  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 05:06:54.365  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 05:06:54.377  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a020db5, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b277ee2, org.springframework.security.web.header.HeaderWriterFilter@25795af5, org.springframework.security.web.csrf.CsrfFilter@2de03edf, org.springframework.security.web.authentication.logout.LogoutFilter@64f81742, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@261d0957, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@714e55d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e0f07fe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fbad609, org.springframework.security.web.session.SessionManagementFilter@371db818, org.springframework.security.web.access.ExceptionTranslationFilter@c1cd3ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25f7159d]
+2021-05-30 05:06:54.418  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:06:54.435  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 05:06:54.757  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 05:06:54.761  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.18 seconds (JVM running for 3231.982)
+2021-05-30 05:06:54.763  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:07:12.701  INFO 20796 --- [Thread-149] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:07:12.702  INFO 20796 --- [Thread-149] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:07:12.703  INFO 20796 --- [Thread-149] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:07:12.710  INFO 20796 --- [Thread-149] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 05:07:12.838  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 05:07:12.838  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 05:07:13.031  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 05:07:13.042  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+2021-05-30 05:07:13.168  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 05:07:13.169  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 05:07:13.169  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 05:07:13.220  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 05:07:13.220  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2021-05-30 05:07:13.259  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 05:07:13.264  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 05:07:13.285  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 05:07:13.286  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 05:07:13.430  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 05:07:13.430  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:07:13.455  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 05:07:13.600  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 05:07:13.644  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 05:07:13.644  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 05:07:13.644  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 05:07:13.644  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 05:07:13.658  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4815c001, org.springframework.security.web.context.SecurityContextPersistenceFilter@65b57deb, org.springframework.security.web.header.HeaderWriterFilter@429f904, org.springframework.security.web.csrf.CsrfFilter@64f6f0f6, org.springframework.security.web.authentication.logout.LogoutFilter@1f522d55, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25886977, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16239836, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d89b22f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@246b0180, org.springframework.security.web.session.SessionManagementFilter@36174a9f, org.springframework.security.web.access.ExceptionTranslationFilter@46c6a477, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ad6cbe3]
+2021-05-30 05:07:13.691  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:07:13.713  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 05:07:14.109  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 05:07:14.113  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.314 seconds (JVM running for 3251.333)
+2021-05-30 05:07:14.116  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:08:51.300  INFO 20796 --- [Thread-155] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:08:51.302  INFO 20796 --- [Thread-155] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:08:51.303  INFO 20796 --- [Thread-155] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:08:51.318  INFO 20796 --- [Thread-155] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.
+2021-05-30 05:08:51.515  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 05:08:51.515  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 05:08:51.755  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 05:08:51.770  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2021-05-30 05:08:51.962  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 05:08:51.964  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 05:08:51.964  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 05:08:52.032  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 05:08:52.032  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 513 ms
+2021-05-30 05:08:52.070  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 05:08:52.075  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 05:08:52.092  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 05:08:52.093  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 05:08:52.179  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 05:08:52.179  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:08:52.200  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 05:08:52.293  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 05:08:52.329  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 05:08:52.329  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 05:08:52.329  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 05:08:52.329  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 05:08:52.340  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24a38dc2, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b126dd6, org.springframework.security.web.header.HeaderWriterFilter@4aa37c7a, org.springframework.security.web.csrf.CsrfFilter@53206b4, org.springframework.security.web.authentication.logout.LogoutFilter@2e8a5377, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7466b0bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fbfa53e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e2e461f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@171ea309, org.springframework.security.web.session.SessionManagementFilter@3e80cb14, org.springframework.security.web.access.ExceptionTranslationFilter@12d8d42e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e158aa]
+2021-05-30 05:08:52.375  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:08:52.392  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 05:08:52.733  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 05:08:52.737  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.261 seconds (JVM running for 3349.958)
+2021-05-30 05:08:52.739  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 05:09:00.463  INFO 20796 --- [Thread-161] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 05:09:00.464  INFO 20796 --- [Thread-161] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 05:09:00.465  INFO 20796 --- [Thread-161] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 05:09:00.476  INFO 20796 --- [Thread-161] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.

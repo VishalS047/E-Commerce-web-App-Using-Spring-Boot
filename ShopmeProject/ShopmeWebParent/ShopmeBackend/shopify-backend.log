@@ -1,0 +1,31 @@
+2021-05-30 04:52:27.097  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Starting ShopmeBackendApplication using Java 15.0.1 on LAPTOP-BPBIQV4G with PID 20796 (F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend\target\classes started by Vishal Sharma in F:\Java Mega Project\Java\EcommerceWebApp\ShopmeProject\ShopmeWebParent\ShopmeBackend)
+2021-05-30 04:52:27.098  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : No active profile set, falling back to default profiles: default
+2021-05-30 04:52:27.622  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-30 04:52:27.710  INFO 20796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 2 JPA repository interfaces.
+2021-05-30 04:52:27.878  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7020 (http)
+2021-05-30 04:52:27.879  INFO 20796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-30 04:52:27.880  INFO 20796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-30 04:52:27.922  INFO 20796 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopifyadmin]  : Initializing Spring embedded WebApplicationContext
+2021-05-30 04:52:27.922  INFO 20796 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 819 ms
+2021-05-30 04:52:27.963  INFO 20796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-30 04:52:27.969  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Starting...
+2021-05-30 04:52:28.050  INFO 20796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Start completed.
+2021-05-30 04:52:28.051  INFO 20796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-05-30 04:52:28.176  INFO 20796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-30 04:52:28.177  INFO 20796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:52:28.198  INFO 20796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-30 04:52:28.300  WARN 20796 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-30 04:52:28.334  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2021-05-30 04:52:28.334  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2021-05-30 04:52:28.334  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-30 04:52:28.334  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/fontawesome/**'] with []
+2021-05-30 04:52:28.344  INFO 20796 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@976dea4, org.springframework.security.web.context.SecurityContextPersistenceFilter@32f782c3, org.springframework.security.web.header.HeaderWriterFilter@75862cd4, org.springframework.security.web.csrf.CsrfFilter@5b8a0368, org.springframework.security.web.authentication.logout.LogoutFilter@3b0833f1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b836537, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22c30672, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66676e72, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42e43aed, org.springframework.security.web.session.SessionManagementFilter@396d47c5, org.springframework.security.web.access.ExceptionTranslationFilter@752fed9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c295382]
+2021-05-30 04:52:28.380  INFO 20796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:52:28.398  INFO 20796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-30 04:52:28.751  INFO 20796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7020 (http) with context path '/shopifyadmin'
+2021-05-30 04:52:28.755  INFO 20796 --- [restartedMain] c.shopme.admin.ShopmeBackendApplication  : Started ShopmeBackendApplication in 1.764 seconds (JVM running for 2365.976)
+2021-05-30 04:52:28.757  INFO 20796 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-30 04:53:42.128  INFO 20796 --- [Thread-93] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-30 04:53:42.129  INFO 20796 --- [Thread-93] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-30 04:53:42.130  INFO 20796 --- [Thread-93] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown initiated...
+2021-05-30 04:53:42.150  INFO 20796 --- [Thread-93] com.zaxxer.hikari.HikariDataSource       : SpingBootEcommerceProject - Shutdown completed.

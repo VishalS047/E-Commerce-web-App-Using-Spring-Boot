@@ -7,9 +7,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+import org.slf4j.Logger;
 import org.springframework.web.multipart.MultipartFile;
 
+
 public class FileUploadUtil {
+	private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(FileUploadUtil.class);
 
 	public static void saveFile(String uploadDirectory, String fileName, MultipartFile multipartFile)
 			throws IOException {
@@ -33,6 +36,7 @@ public class FileUploadUtil {
 			Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
 
 		} catch (IOException e) {
+
 			throw new IOException("Could not save file " + fileName, e);
 		}
 	}
@@ -45,11 +49,14 @@ public class FileUploadUtil {
 					try {
 						Files.delete(file);
 					} catch (IOException ex) {
+						LOGGER.error("Could not delete file " + file);
 						System.out.println("Could not delete file: " + file);
 					}
 				}
 			});
 		} catch (IOException ex) {
+			LOGGER.error("Could not list directory " + ex);
+
 			System.out.println("Could not list directory: " + ex);
 		}
 	}

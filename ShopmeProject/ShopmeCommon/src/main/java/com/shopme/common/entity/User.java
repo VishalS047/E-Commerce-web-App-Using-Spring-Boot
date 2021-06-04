@@ -4,6 +4,7 @@ import java.util.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -43,7 +44,7 @@ public class User {
 
 	private boolean enabled;
 		
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
 	private Set<Role> roles = new HashSet<>();
 
@@ -134,5 +135,10 @@ public class User {
 			return "/images/default.png";
 //		System.out.println("/userphotos/" + this.id + "/" + this.photots);
 		return "/userphotos/" + this.id + "/" + this.photots;
+	}
+	
+	@Transient
+	public String getFullName() {
+		return this.firstName+" "+ this.lastName;
 	}
 }

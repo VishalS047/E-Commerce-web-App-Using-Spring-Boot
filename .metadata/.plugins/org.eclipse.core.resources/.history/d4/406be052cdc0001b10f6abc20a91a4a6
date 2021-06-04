@@ -1,0 +1,14 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: page_header('Error - Shopify Admin')">
+	
+</head>
+<body>
+		<div th:replace="navigationfragment ::  menu"></div>
+		
+		<div class="container-fluid"></div>
+			
+		<div th:replace="fragments :: footer"></div>
+</body>
+</html>

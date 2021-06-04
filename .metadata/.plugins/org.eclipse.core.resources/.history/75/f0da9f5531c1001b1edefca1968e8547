@@ -1,0 +1,13 @@
+package com.shopme.admin.category;
+
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.Rollback;
+
+@DataJpaTest(showSql = true)
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+@Rollback(value = false)
+public class CategoryRepositoryTests {
+
+}

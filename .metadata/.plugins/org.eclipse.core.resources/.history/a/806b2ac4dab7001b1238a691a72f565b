@@ -1,7 +1,0 @@
-package com.shopme.mvcconfiguration;
-
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-public class SpringMvcConfiguration implements WebMvcConfigurer {
-	
-}

@@ -1,0 +1,22 @@
+package com.shopme.common.entity;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Categories_Table")
+public class Category {
+	
+	private Integer cid;
+	private String name;
+	private String alias;
+	private String image;
+	private boolean isEnabled;
+	
+	private Category parent;
+	
+	private Set<Category> children = new HashSet<>();
+}

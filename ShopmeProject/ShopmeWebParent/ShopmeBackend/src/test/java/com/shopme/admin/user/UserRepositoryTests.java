@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.annotation.Rollback;
 
 import com.shopme.common.entity.Role;
@@ -136,5 +137,30 @@ public class UserRepositoryTests {
 		listContent.forEach(user ->System.out.println(user));
 		
 		assertThat(listContent.size()).isEqualTo(pagesize);
+	}
+	
+	@Test
+	public void testSearchModule() {
+		
+		String keyword = "Sh";
+		
+		int pageNumber = 0;
+		int pagesize = 5;
+		
+		Pageable pageable = PageRequest.of(pageNumber, pagesize);
+		
+		Page<User> page = this.userRepository.findAll(keyword,pageable);
+		
+		List<User> listContent = page.getContent();
+		
+		listContent.forEach(user ->System.out.println(user));
+		
+		assertThat(listContent.size()).isGreaterThan(0);
+	}
+	
+	@Test
+	public void checkPassword() {
+		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+		System.out.println(bCryptPasswordEncoder.matches("Vishal", "$2a$10$J8/jJ3KbXgKeWNn2VZvA3.553odqx9tE6.iAweYb3NSjDSu6Z2B16"));
 	}
 }

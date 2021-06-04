@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head
+	th:replace="fragments :: page_header('Category Form - Shopify Admin')"></head>
+
+<body>
+	<div class="container-fluid">
+
+		<div th:replace="navigationfragment ::  menu"></div>
+
+		<div class="container">
+			<h1 class="text-center m-3">Add Category</h1>
+			
+		</div> 
+
+		<div class="container">
+
+			<form th:action="@{/categories/save}" method="post" th:object="${category}" enctype="multipart/form-data">
+
+				<input type="hidden" th:field="*{cid}">
+
+				<div class="form-group">
+
+					<div class="col-xl-7 col-md-8 col-sm-5 offset-0" style="margin: auto;">
+
+						<div class="card mt-3">
+
+							<div class="card-header">
+
+								<h3 class="text-center text-uppercase">New Category Form</h3>
+
+							</div>
+
+							<div class="card-body">
+
+								<div>
+									<label for="cname" class="form-label">Category Name</label> <input
+										type="text" class="form-control" id="cname" name="name"
+										th:field="*{name}" required="required" minlength="3"
+										maxlength="128">
+								</div>
+
+								<div>
+									<label for="alias" class="form-label mt-2">Alias</label> 
+									
+									<input type="text" class="form-control" id="alias" name="alias"
+										th:field="*{alias}" required="required" minlength="3"
+										maxlength="128">
+										
+								</div>
+
+								<div>
+								
+									<label for="isenabled" class="form-label mt-3">Enabled:</label> 
+									<input type="checkbox" style="margin-left: 35px;" id="enabled" name="enabled" th:field="*{enabled}" />
+
+								</div>
+
+								<div>
+									<label for="parent" class="form-label mt-2">Parent Category</label>
+									
+									<div>
+								
+										<select class="form-control" th:field = "*{parent}">
+								
+											<option value="0">[No Parent]</option>
+								
+											<th:block th:each=" cate : ${categories}">
+								
+												<option th:value="${cate.cid}">[[${cate.name}]]</option>
+								
+											</th:block>
+								
+										</select>
+								
+									</div>
+								
+								</div>
+
+								<div class="form-group mt-3">
+
+									<label for="fileImage">Image:</label> 
+									
+									<input type="hidden" th:field="*{image}">
+									
+									<input type="file" id="fileImage" name="fileimage" class="form-label m-3" accept="image/png, image/jpeg" required="required"/> 
+									
+									<img id="thumbnail" class="img-fluid" th:src="@{/images/download.png}" alt="Image preview" 
+										
+										style="height: 120px; width: 150px" />
+
+								</div>
+
+							</div>
+
+							<div class="text-center">
+								
+								<button type="submit" class="btn btn-primary mb-2">Save</button>
+
+								<button type="button" class="btn btn-secondary mb-2" id="cancelBtn">Cancel</button>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</form>
+			
+		</div>
+
+
+		<!-- MODAL WINDOW -->
+
+		<div class="modal" id="myModal">
+
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<h4 class="modal-title " id="modalTitle" style="color: red;">Modal
+							title</h4>
+
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+
+							<span aria-hidden="true">&times;</span>
+
+						</button>
+
+					</div>
+
+					<div class="modal-body" id="modalBody">
+
+						<h4>Modal body text goes here.</h4>
+
+					</div>
+
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div th:replace=" fragments :: footer"></div>
+
+	</div>
+
+</body>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+		 $("#cancelBtn").on("click", function() {
+		 	window.location = moduleURL;
+		 	});
+		 	
+		 	$("#fileimage").change(function(){
+		 		fileSize = this.files[0].size;
+		 		
+		 		//alert("fileSize is: "+ fileSize);
+		 		
+		 		if(fileSize > 1048576) {
+		 			this.setCustomValidity("You must choose an image less than 1MB!");
+		 			this.reportValidity();
+		 		} else {
+		 			this.setCustomValidity("");
+		 			showImageThumbnail(this);
+		 	}
+		 		
+	});
+});
+		  
+		 function showImageThumbnail(fileInput) {
+		 	var file = fileInput.files[0];
+		 	console.log(file);
+		 	var reader = new FileReader();
+		 	reader.onload = function(e) {
+		 		$("#thumbnail").attr("src", e.target.result);
+		 	};
+		 	reader.readAsDataURL(file);
+		}
+</script>
+</html>

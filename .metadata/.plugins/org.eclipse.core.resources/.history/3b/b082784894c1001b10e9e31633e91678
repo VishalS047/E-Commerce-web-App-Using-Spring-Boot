@@ -1,0 +1,19 @@
+package com.shopme.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.shopme.admin.user.CategoryRepository;
+import com.shopme.common.entity.Category;
+
+public class CategoryService {
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
+	public List<Category> listAll() {
+		List<Category> findAll = (List<Category>) this.categoryRepository.findAll();
+		return findAll;
+	}
+}

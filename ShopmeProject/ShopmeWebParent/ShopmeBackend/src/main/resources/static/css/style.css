@@ -1,15 +1,49 @@
 .colorEdit {
 	color: green;
-
 }
+
 .colorDelete {
 	color: red;
-
 }
-.colorEnabled{
+
+.colorEnabled {
 	color: green;
-
 }
-.colorDisabled{
+
+.colorDisabled {
 	color: red;
 }
+
+@media screen and (max-width: 760px) {
+	/* for small screen */
+	div.full-details {
+		display: none;
+	}
+	div.less-details {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+	/* for medium screen */
+	div.full-details {
+		display: block;
+	}
+	
+	div.less-details {
+		display: none;
+	}
+	
+	.hideable-column {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	div.less-details {
+		display: none;
+	}
+	.hideable-column {
+		display: table-cell;
+	}
+} 

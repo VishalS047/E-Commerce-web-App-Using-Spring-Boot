@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: page_header('Home - Shopify Admin')"></head>
+
+<body>
+		<div th:replace="navigationfragment ::  menu"></div>
+		
+		<div>
+			<h2>Welcome to Shopify Admin Control Panel</h2>
+			<span class="float-right">Welcome <a th:href="@{/account}" sec:authentication = "principal.fullUserName"></a></span>
+		</div>
+		
+	
+		<div th:replace="fragments :: footer"></div>
+		
+		
+</body>
+</html>

@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EntityScan({ "com.shopme.common.entity", "com.shopme.admin.user" })
-@ComponentScan({ "com.shopme.controller", "com.shopme.service", "com.shopme.security", "com.shopme.restcontroller", "com.shopme.util", "com.shopme.mvcconfiguration" })
+@ComponentScan({ "com.shopme.controller", "com.shopme.service", "com.shopme.security", "com.shopme.restcontroller",
+		"com.shopme.util", "com.shopme.mvcconfiguration", "com.shopme.export", "com.shopme.accountcontroller","com.shopme.exception"})
 public class ShopmeBackendApplication {
 
 	public static void main(String[] args) {

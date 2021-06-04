@@ -2,7 +2,6 @@ package com.shopme.service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,7 +15,7 @@ import com.shopme.admin.user.RoleRepository;
 import com.shopme.admin.user.UserRepository;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
-
+import com.shopme.exception.UserNotFoundException;
 
 @Service
 @Transactional
@@ -32,19 +31,30 @@ public class UserService {
 
 	@Autowired
 	public PasswordEncoder passwordEncoder;
-
+	
+	public User getUserByEmail(String email) {
+		User user = this.userRepository.getUserByEmail(email);
+		return user;
+	}
+	
 	public List<User> listAll() {
-		List<User> listAllUsers = (List<User>) this.userRepository.findAll();
+		List<User> listAllUsers = (List<User>) this.userRepository.findAll(Sort.by("firstName").ascending());
 		return listAllUsers;
 	}
 
-	public Page<User> listByPage(int pageNum, String sortField, String sortDir) {
-		
+	public Page<User> listByPage(int pageNum, String sortField, String sortDir, String keyword) {
+
 		Sort sort = Sort.by(sortField);
+
 		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
-		
-		
+
 		Pageable pageable = PageRequest.of(pageNum - 1, USERS_PER_PAGE, sort);
+
+		if (keyword != null) {
+
+			Page<User> allUsers = this.userRepository.findAll(keyword, pageable);
+			return allUsers;
+		}
 
 		Page<User> allUsers = this.userRepository.findAll(pageable);
 
@@ -63,13 +73,13 @@ public class UserService {
 
 		if (isUpdatingUser) {
 			User exsistingUser = this.userRepository.findById(user.getId()).get();
-			
+
 			if (user.getPassword().isEmpty()) {
-				
+
 				user.setPassword(exsistingUser.getPassword());
-				
+
 			} else {
-				
+
 				this.encodePassword(user);
 			}
 		} else {
@@ -77,6 +87,24 @@ public class UserService {
 		}
 
 		return this.userRepository.save(user);
+	}
+	
+	public User updateAccount(User userInForm) {
+		User userInDB = this.userRepository.findById(userInForm.getId()).get();
+		if(!userInForm.getPassword().isEmpty()) {
+			userInDB.setPassword(userInForm.getPassword());
+			this.encodePassword(userInDB);
+		}
+		
+		if(userInForm.getPhotots() != null) {
+			userInDB.setPhotots(userInForm.getPhotots());
+		}
+		
+		userInDB.setFirstName(userInForm.getFirstName());
+		userInDB.setLastName(userInForm.getLastName());
+		
+		User user = this.userRepository.save(userInDB);
+		return user;
 	}
 
 	public void encodePassword(User user) {
