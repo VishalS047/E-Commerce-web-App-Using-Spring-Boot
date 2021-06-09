@@ -10,14 +10,15 @@
 		<div th:replace="navigationfragment ::  menu"></div>
 
 		<div class="container">
-			<h1 class="text-center m-3">Add Category</h1>
+			<h1 class="text-center m-3" th:text="${heading}"></h1>
 			
 		</div> 
 
 		<div class="container">
 
-			<form th:action="@{/categories/save}" method="post" th:object="${category}" enctype="multipart/form-data">
-
+			<form th:action="@{/categories/save}" method="post" th:object="${category}" enctype="multipart/form-data" 
+				  onsubmit="return checkUnique(this)">
+						
 				<input type="hidden" th:field="*{cid}">
 
 				<div class="form-group">
@@ -28,7 +29,8 @@
 
 							<div class="card-header">
 
-								<h3 class="text-center text-uppercase">New Category Form</h3>
+								<h3 class="text-center text-uppercase" th:if="${category.cid == null}">New Category Form</h3>
+								<h3 class="text-center text-uppercase" th:if="${category.cid != null}">Edit Category Form</h3>
 
 							</div>
 
@@ -66,11 +68,19 @@
 								
 											<option value="0">[No Parent]</option>
 								
-											<th:block th:each=" cate : ${categories}">
+											<th:block th:if="${category.cid == null}" th:each=" cate : ${categories}">
 								
 												<option th:value="${cate.cid}">[[${cate.name}]]</option>
 								
 											</th:block>
+											
+											
+											<th:block th:each=" cate : ${listCategory}">
+								
+												<option th:value="${cate.cid}">[[${cate.name}]]</option>
+								
+											</th:block>
+								
 								
 										</select>
 								
@@ -85,9 +95,9 @@
 									<input type="hidden" th:field="*{image}">
 									
 									<input type="file" id="fileImage" name="fileimage" class="form-label m-3" accept="image/png, image/jpeg" 
-										required="required"/> 
+										th:required="${category.image == null}"/> 
 									
-									<img id="thumbnail" class="img-fluid" th:src="@{/images/download.png}" alt="Image preview" 
+									<img id="thumbnail" class="img-fluid" th:src="@{${category.getPhotosImagePath}}" alt="Image preview" 
 										
 										style="height: 120px; width: 150px" />
 
@@ -114,48 +124,7 @@
 		</div>
 
 
-		<!-- MODAL WINDOW -->
-
-		<div class="modal" id="myModal">
-
-			<div class="modal-dialog">
-
-				<div class="modal-content">
-
-					<div class="modal-header">
-
-						<h4 class="modal-title " id="modalTitle" style="color: red;">Modal
-							title</h4>
-
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-
-							<span aria-hidden="true">&times;</span>
-
-						</button>
-
-					</div>
-
-					<div class="modal-body" id="modalBody">
-
-						<h4>Modal body text goes here.</h4>
-
-					</div>
-
-					<div class="modal-footer">
-
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
-
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
+		<div th:replace="modal_fragments::modal_dialog"></div>
 
 		<div th:replace=" fragments :: footer"></div>
 
@@ -167,6 +136,36 @@
 <script type="text/javascript">
 		
 		moduleURL = "[[@{/categories}]]";
+		
+		function checkUnique(form) {
+			catId = $("#cid").val();
+			catName = $("#cname").val();
+			catAlias = $("#alias").val();
+			
+			console.log(catId,catName,catAlias);
+						
+			csrfValue = $("input[name='_csrf']").val();
+			
+			url = "[[@{/categories/isUnique}]]";
+			
+			params = {id : catId, name: catName, alias : catAlias, _csrf : csrfValue};
+			
+			$.post(url, params, function(response){
+				if(response == 'UNIQUE') {
+					form.submit();
+				}
+				else if(response == "NOT_UNIQUE_CATEGORY_NAME") {
+					showWarningModal("There is another category habing same name:  "+catName);
+				}
+				else if(response == "NOT_UNIQUE_CATEGORY_ALIAS") {
+					showWarningModal("There is another category having same alias:  "+catAlias);
+				}
+			}).fail(function() {
+				showErrorModal("Cannot connect to the server!");
+			});
+			
+			return false;
+		}
 	
 </script>
 

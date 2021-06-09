@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{User.java[User" modifiers="1" timestamp="1621974039406"/>
     <typeInfo handle="=ShopmeBackend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.security{ShopifyUserDetails.java[ShopifyUserDetails" modifiers="1" timestamp="1622062938367"/>
     <typeInfo handle="=ShopmeBackend/C:\/Users\/Vishal Sharma\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.4.8\/spring-data-commons-2.4.8.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/2.4.8=/=/maven.scope=/compile=/&lt;org.springframework.data.repository(PagingAndSortingRepository.class[PagingAndSortingRepository" modifiers="1537" timestamp="1620671863987"/>
-    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{Category.java[Category" modifiers="1" timestamp="1622762890142"/>
+    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{Category.java[Category" modifiers="1" timestamp="1622939209561"/>
+    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{User.java[User" modifiers="1" timestamp="1621974039406"/>
 </typeInfoHistroy>

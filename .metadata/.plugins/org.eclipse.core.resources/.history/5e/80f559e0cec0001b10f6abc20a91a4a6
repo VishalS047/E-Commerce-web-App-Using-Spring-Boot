@@ -1,8 +1,0 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-
-<head th:replace="fragments :: page_header('Home - Shopify Admin')"></head>
-<body>
-	
-</body>
-</html>

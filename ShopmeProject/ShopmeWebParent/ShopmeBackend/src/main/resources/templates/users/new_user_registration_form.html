@@ -116,49 +116,11 @@
 		</div>
 		
 		
-		<!-- MODAL WINDOW -->
-
-					<div class="modal"  id="myModal">
-					
-  						<div class="modal-dialog">
-    
-    						<div class="modal-content">
-      
-      							<div class="modal-header">
-        
-        							<h4 class="modal-title " id="modalTitle" style="color: red;">Modal title</h4>
-        
-        								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          
-          									<span aria-hidden="true">&times;</span>
-        			
-        								</button>
-      				
-      							</div>
-      			
-      						<div class="modal-body" id="modalBody">
-        							
-        							<h4>Modal body text goes here.</h4>
-      							
-      						</div>
-      		
-      						<div class="modal-footer">
-        						
-        						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        						
-      					
-      						</div>
-    				
-    				</div>
-  			
-  				</div>
-			
-			</div>
+		
+		<div th:replace="modal_fragments::modal_dialog"></div>
 		
 
-		<div class="text-center">
-			<p>Shopify Control Panel - Copyright &copy; Shopify</p>
-		</div>
+		<div th:replace="fragments :: footer"></div>
 		
 	</div>
 	
@@ -192,26 +154,22 @@
 		 			
 		 		}else if(response == "Duplicate") {
 		 		
-					showModalDialog("Alert!!", "There is another user registered with this email: "+userEmail);
+					showWarningModal("There is another user registered with this email: "+userEmail);
 		 		}
 				else {
 				
-					showModalDialog("Error!!", "Unknown response from the server!");
+					showErrorModal("Unknown response from the server!");
 				}
 		 	}).fail(function() {
 		 	
-				showModalDialog("Error!!", "Cannot connect to the server!");
+				showErrorModal("Cannot connect to the server!");
 				
 			 });
 			 
 		 	return false;
 		 }
 		 
-		 function showModalDialog(title, message) {
-		 	$("#modalTitle").text(title);
-			$("#modalBody").text(message);
-			$('#myModal').modal({show:true});
-		 }
+		
 	</script>
 	
 </html>

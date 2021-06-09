@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 
+@SuppressWarnings("serial")
 public class ShopifyUserDetails implements UserDetails {
 
 	private User user;

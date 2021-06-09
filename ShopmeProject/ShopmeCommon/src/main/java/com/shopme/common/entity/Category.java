@@ -22,10 +22,10 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer cid;
 
-	@Column(length = 128, nullable = false, unique = true)
+	@Column(length = 128, nullable = false, unique = false)
 	private String name;
 
-	@Column(length = 64, nullable = false, unique = true)
+	@Column(length = 64, nullable = false, unique = false)
 	private String alias;
 
 	@Column(length = 128, nullable = false)
@@ -62,7 +62,7 @@ public class Category {
 		category2.setImage(category.getImage());
 		category2.setAlias(category.getAlias());
 		category2.setEnabled(category.isEnabled());
-
+		category2.setHasChildren(category.getChildren().size()>0);
 		return category2;
 	}
 
@@ -139,6 +139,13 @@ public class Category {
 		return parent;
 	}
 
+	public Category(Integer cid, String name, String alias) {
+		super();
+		this.cid = cid;
+		this.name = name;
+		this.alias = alias;
+	}
+
 	public void setParent(Category parent) {
 		this.parent = parent;
 	}
@@ -153,9 +160,22 @@ public class Category {
 
 	@Transient
 	public String getPhotosImagePath() {
-		if (this.cid == null || this.image == null)
+		if (this.cid == null)
 			return "/images/download.png";
 //		System.out.println("/userphotos/" + this.id + "/" + this.photots);
 		return "/category-images/" + this.cid + "/" + this.image;
+	}
+	
+	
+	
+	@Transient
+	private boolean hasChildren;
+
+	public boolean isHasChildren() {
+		return hasChildren;
+	}
+
+	public void setHasChildren(boolean hasChildren) {
+		this.hasChildren = hasChildren;
 	}
 }

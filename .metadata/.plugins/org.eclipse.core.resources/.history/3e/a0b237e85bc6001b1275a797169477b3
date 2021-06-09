@@ -1,0 +1,6 @@
+package com.shopme.restcontroller;
+
+
+public class CategoryRestController {
+
+}

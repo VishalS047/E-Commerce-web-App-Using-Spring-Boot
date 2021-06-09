@@ -46,7 +46,7 @@ public class UserController {
 //		System.out.println("SortField: "+sortField);
 //		
 //		System.out.println("SortDir: "+sortDir);
-		
+
 		Page<User> page = this.userService.listByPage(pageNum, sortField, sortDir, keyword);
 
 		List<User> allUsers = page.getContent();
@@ -57,8 +57,6 @@ public class UserController {
 
 //		System.out.println(listUsers);
 
-		
-		
 		long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
 
 		long endCount = startCount + UserService.USERS_PER_PAGE - 1;
@@ -68,7 +66,7 @@ public class UserController {
 		}
 
 		String reverseDir = sortDir.equals("asc") ? "desc" : "asc";
-		
+
 		model.addAttribute("startCount", startCount);
 		model.addAttribute("endCount", endCount);
 		model.addAttribute("currentPage", pageNum);
@@ -141,7 +139,7 @@ public class UserController {
 
 	private String getRedirectURLtoAffectedUser(User user) {
 		String firstPartOfEmail = user.getEmail().split("@")[0];
-		
+
 		return "redirect:/users/page/1?sortField=id&sortDir=asc&keyword=" + firstPartOfEmail;
 	}
 
@@ -170,6 +168,8 @@ public class UserController {
 	public String deleteUser(@PathVariable("id") Integer id, Model model, RedirectAttributes redirectAttributes) {
 		try {
 			this.userService.deleteUser(id);
+			String categoryDir = "/userphotos/" + id;
+			FileUploadUtil.cleanDir(categoryDir);
 			redirectAttributes.addFlashAttribute("message", "The User ID " + id + " is successfully deleted. ");
 		} catch (UserNotFoundException e) {
 //			
@@ -191,35 +191,35 @@ public class UserController {
 
 		return "redirect:/users";
 	}
-	
+
 	@GetMapping("/users/export/csv")
 	public void exportToCSV(HttpServletResponse response) throws IOException {
-		
+
 		List<User> listAllUsers = this.userService.listAll();
-		
+
 		UserCsvExporter exporter = new UserCsvExporter();
-		
+
 		exporter.export(listAllUsers, response);
 	}
-	
+
 	@GetMapping("/users/export/xlsx")
 	public void exportToExcel(HttpServletResponse response) throws IOException {
-		
+
 		List<User> listAllUsers = this.userService.listAll();
-		
+
 		UserExcelExporter exporter = new UserExcelExporter();
-		
+
 		exporter.export(listAllUsers, response);
 	}
-	
+
 	@GetMapping("/users/export/pdf")
 	public void exportToPdf(HttpServletResponse response) throws IOException {
-		
+
 		List<User> listAllUsers = this.userService.listAll();
-		
+
 		UserPdfExporter exporter = new UserPdfExporter();
-		
+
 		exporter.export(listAllUsers, response);
 	}
-	
+
 }
