@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+	<div th:fragment="pImages" th:remove="tag">
+		
+		<div class="row">
+		
+			<div class="col-xl-6 ofset-2">
+				
+				<div class="card text-center">Main Image</div>
+				<div class="">
+					<img id = "thumbnail" src="" alt="" />
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>

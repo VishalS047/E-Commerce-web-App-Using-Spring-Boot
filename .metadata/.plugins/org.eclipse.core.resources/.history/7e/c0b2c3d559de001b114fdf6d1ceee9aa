@@ -1,0 +1,5 @@
+package com.shopme.exception;
+
+public class ProductNotFoundException extends Exception {
+
+}

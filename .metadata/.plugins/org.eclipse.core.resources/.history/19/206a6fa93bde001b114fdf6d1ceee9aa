@@ -1,0 +1,50 @@
+package com.shopme.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.shopme.common.entity.Brand;
+import com.shopme.common.entity.Product;
+import com.shopme.service.BrandService;
+import com.shopme.service.ProductService;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	private ProductService productService;
+	
+	@Autowired
+	private BrandService brandService;
+	
+	@GetMapping(path = "/products")
+	public String listAllProducts(Model model) {
+		List<Product> listAllProducts = this.productService.listAllProducts();
+		model.addAttribute("listAllProducts",listAllProducts);
+		
+		return "products/products";
+	}
+	
+	@GetMapping(path = "/products/newproduct")
+	public String newProduct(Model model) {
+		List<Brand> listBrands = this.brandService.listAll();
+//		System.out.println(listBrands);
+		Product product = new Product();
+		product.setInStock(true);
+		product.setEnabled(true);
+		
+		model.addAttribute("listBrands", listBrands);
+		model.addAttribute("product", product);
+		model.addAttribute("title", "Create new product");
+		
+		
+		return "products/new_product_form";
+	}
+	
+	
+}

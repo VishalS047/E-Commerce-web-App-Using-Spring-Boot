@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+	<div th:fragment="pImages" th:remove="tag">
+		
+		<div class="row">
+		
+			<div class="row">
+				
+				<div class=""><label for="">Main Image</label></div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>

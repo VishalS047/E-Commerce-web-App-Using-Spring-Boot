@@ -1,0 +1,27 @@
+package com.shopme.common.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_images")
+public class ProductImage {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Integer id;
+	@Column(name = "image_name", nullable = false)
+	private String name;
+	
+	@ManyToOne
+	@JoinColumn(name = "product_id")
+	private Product product;
+	
+	
+}

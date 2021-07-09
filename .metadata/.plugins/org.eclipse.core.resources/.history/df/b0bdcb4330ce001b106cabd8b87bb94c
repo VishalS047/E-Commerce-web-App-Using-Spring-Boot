@@ -1,0 +1,60 @@
+package com.shopme.admin.brands;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.Rollback;
+
+import com.shopme.admin.user.BrandsRepository;
+import com.shopme.common.entity.Brand;
+import com.shopme.common.entity.Category;
+
+@DataJpaTest()
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+@Rollback(false)
+public class BrandRepositoryTests {
+	
+	@Autowired
+	private BrandsRepository brandsRepo;
+	
+	@Test
+	public void saveBrand() {
+		Category laptops = new Category(194);
+		Brand acer = new Brand("Acer","acer.png");
+		acer.getCategories().add(laptops);
+		
+		Brand save = brandsRepo.save(acer);
+		
+		assertThat(save).isNotNull();
+		assertThat(save.getBrandId()).isGreaterThan(0);
+	}
+	
+	@Test
+	public void saveBrand2() {
+		Category mobile = new Category(231);
+		Brand apple = new Brand("Apple","apple.png");
+		apple.getCategories().add(mobile);
+		
+		Brand save = brandsRepo.save(apple);
+		
+		assertThat(save).isNotNull();
+		assertThat(save.getBrandId()).isGreaterThan(0);
+	}
+	
+	@Test
+	public void saveBrand3() {
+		
+		Brand samsung = new Brand("Samsung","samsung.png");
+		samsung.getCategories().add(new Category(231));
+		samsung.getCategories().add(new Category(231));
+		
+		Brand save = brandsRepo.save(samsung);
+		
+		assertThat(save).isNotNull();
+		assertThat(save.getBrandId()).isGreaterThan(0);
+	}
+}

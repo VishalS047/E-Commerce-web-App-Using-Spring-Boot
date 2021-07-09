@@ -2,17 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head th:replace="fragments :: page_header('Home - Shopify Admin')"></head>
-
+	
+	<style>
+		#name {
+			color: red;
+			font-weight: 700;
+			text-decoration: none;
+		}
+		
+		.style {
+			display: relative;
+			text-align: right;
+			bottom: 50px;
+		}
+	</style>
+	
 <body>
 		<div th:replace="navigationfragment ::  menu"></div>
 		
-		<div class="container-fluid">
-			<h2>Welcome to Shopify Admin Control Panel</h2>
-			<span style="font-size: 20px;">Welcome:  <a th:href="@{/account}" sec:authentication = "principal.fullUserName"></a></span>
-			
-			<span sec:authentication = "principal.authorities"></span>
+		<div class="container-fluid design">
+			<h2 style="text-align: center; margin-top: 20px">Welcome to Shopify Admin Control Panel</h2>
 		</div>
 		
+		<div class="container-fluid style">
+			<span style="font-size: 20px;">Welcome  <a id="name" th:href="@{/account}" sec:authentication = "principal.fullUserName"></a></span>
+			<span style="font-weight: 500" sec:authentication = "principal.authorities"></span>
+		</div>
 		<div th:replace="fragments :: footer"></div>
 		
 		

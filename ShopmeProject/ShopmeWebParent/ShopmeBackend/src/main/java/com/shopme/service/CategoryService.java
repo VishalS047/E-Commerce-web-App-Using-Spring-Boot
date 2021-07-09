@@ -9,11 +9,15 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shopme.admin.user.CategoryRepository;
+import com.shopme.categoryinfo.CategoryPageInfo;
 import com.shopme.common.entity.Category;
 import com.shopme.exception.CategoryNotFoundException;
 
@@ -21,10 +25,12 @@ import com.shopme.exception.CategoryNotFoundException;
 @Transactional
 public class CategoryService {
 
+	public final int ROOT_CATEGORIES_PER_PAGE = 1;
 	@Autowired
 	private CategoryRepository categoryRepository;
 
-	public List<Category> listAll(String sortDir) {
+	public List<Category> listByPage(CategoryPageInfo pageInfo, int pageNum, String sortDir,String keyword) {
+
 		Sort sort = Sort.by("name");
 
 		if (sortDir.equals("asc")) {
@@ -32,8 +38,36 @@ public class CategoryService {
 		} else if (sortDir.equals("desc")) {
 			sort = sort.descending();
 		}
-		List<Category> listRootCategories = this.categoryRepository.listRootCategories(sort);
-		return listHierarchicalCategories(listRootCategories, sortDir);
+
+		Pageable pageable = PageRequest.of(pageNum - 1, ROOT_CATEGORIES_PER_PAGE, sort);
+		
+		Page<Category> pageCategories = null; 
+		
+		if(keyword!=null && !keyword.isEmpty() ) {
+			pageCategories = this.categoryRepository.search(keyword, pageable);
+		}
+		else {
+			pageCategories = this.categoryRepository.listRootCategories(pageable);
+		}
+		
+		List<Category> rootCategories = pageCategories.getContent();
+
+		pageInfo.setTotalElements(pageCategories.getTotalElements());
+
+		pageInfo.setTotalPages(pageCategories.getTotalPages());
+		
+		
+		if(keyword!=null && !keyword.isEmpty()) {
+			List<Category> searchResult = pageCategories.getContent();
+			for(Category category :searchResult) {
+				category.setHasChildren(category.getChildren().size()>0);
+			}
+			return searchResult;
+		} else {
+			return listHierarchicalCategories(rootCategories, sortDir);
+		}
+
+		
 	}
 
 	private List<Category> listHierarchicalCategories(List<Category> rootCategories, String sortDir) {
@@ -44,7 +78,7 @@ public class CategoryService {
 			Set<Category> children = this.sortSubCategories(rootCategory.getChildren(), sortDir);
 
 			for (Category subCategory : children) {
-				String name = "--" + subCategory.getName();
+				String name = "*" + subCategory.getName();
 				hierarchicalCategories.add(Category.copyFull(subCategory, name));
 				listSubHierarchicalCategories(hierarchicalCategories, subCategory, 1, sortDir);
 			}
@@ -61,7 +95,7 @@ public class CategoryService {
 			String name = "";
 
 			for (int i = 0; i < sublevel; i++) {
-				name += "--";
+				name += "*";
 			}
 			name += subCategory.getName();
 			hierarchicalCategories.add(Category.copyFull(subCategory, name));
@@ -85,7 +119,7 @@ public class CategoryService {
 
 				for (Category subCategory : children) {
 
-					String name = "--" + subCategory.getName();
+					String name = "*" + subCategory.getName();
 
 					categoriesInForm.add(Category.copyIdandName(subCategory.getCid(), name));
 
@@ -104,7 +138,7 @@ public class CategoryService {
 			String name = "";
 
 			for (int i = 0; i < subLevel; i++) {
-				name += "--";
+				name += "*";
 			}
 			name += subCategory.getName();
 			categoriesInForm.add(Category.copyIdandName(subCategory.getCid(), name));
@@ -182,12 +216,12 @@ public class CategoryService {
 
 	public void deleteCategory(Integer id) throws CategoryNotFoundException {
 		Long countById = this.categoryRepository.countBycid(id);
-		
+
 		if (countById == null || countById == 0) {
 			System.out.println("YSCABISCBSICASCUASCISUC");
 			throw new CategoryNotFoundException("Could not find any user with id: " + id);
 		}
-		
+
 		this.categoryRepository.deleteById(id);
 	}
 }

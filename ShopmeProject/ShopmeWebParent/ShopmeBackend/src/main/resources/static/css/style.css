@@ -1,9 +1,12 @@
 .colorEdit {
-	color: green;
+	color: #673ab7;
+}
+.colorView {
+	color: #009688;
 }
 
 .colorDelete {
-	color: red;
+	color: #880e4f;
 }
 
 .colorEnabled {

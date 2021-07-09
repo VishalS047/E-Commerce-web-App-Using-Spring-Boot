@@ -27,24 +27,7 @@
 		</div>
 		
 		
-		<!-- IMPLEMENTING SEARCH BUTTON -->
-		<div>
-			<form th:action="@{/users/page/1}" class="form-inline float-right m-2">
-				
-				<input type="hidden" name="sortField" th:value="${sortField}">
-				
-				<input type="hidden" name="sortDir" th:value="${sortDir}">
-				
-				<h5>Search here</h5>&nbsp;
-				
-				<input type="search" id="search" required="required" name ="keyword" th:value="${keyword}" class="form-control"> &nbsp;
-				
-				<button type="submit" class="btn btn-primary m-1"><i class="fas fa-search"></i></button>
-				&nbsp;
-				<button type="button" onclick="clearFuntion()" class="btn btn-secondary m-1"><i class="fas fa-eraser"></i></button>
-				
-			</form>
-		</div>
+		<div th:replace="fragments :: searchForm('/users/page/1')"></div>
 		
 		
 		
@@ -56,7 +39,7 @@
 					<tr>
 						<!-- ID -->
 						<th th:class="hideable-column">
-							<th th:replace="fragments :: column_link('id', '#ID', 'tag')" />
+							<th th:replace="fragments :: column_link('/users' ,'id', 'ID', 'tag')" />
 						</th>
 						
 						
@@ -64,35 +47,35 @@
 						
 						<!-- EMAIL  -->
 						<th class="hideable-column">
-							<th th:replace="fragments :: column_link('email', 'EMAIL ID', 'tag')" />
+							<th th:replace="fragments :: column_link('/users','email', 'EMAIL ID', 'tag')" />
 						</th>
 						
 						<!-- FIRST NAME  -->
 						
-						<th th:replace="fragments :: column_link('firstName' , 'FIRST NAME', 'none')" />
+						<th th:replace="fragments :: column_link('/users' ,'firstName' , 'FIRST NAME', 'none')" />
 						
 						<!-- LAST NAME -->
-						<th th:replace="fragments :: column_link('lastName' , 'LAST NAME', 'none')" />
+						<th th:replace="fragments :: column_link('/users', 'lastName' , 'LAST NAME', 'none')" />
 						
 						<!-- ROLES without using fragment -->
 						<th>
-							<a th:if="${sortField != 'roles'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=roles&sortDir=' + ${sortDir}}">Roles</a>
+							<a th:if="${sortField != 'roles'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=roles&sortDir=' + ${sortDir}}">ROLES</a>
 							
-							<a th:if="${sortField == 'roles'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=roles&sortDir=' + ${reverseDir}}">Roles</a>
+							<a th:if="${sortField == 'roles'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=roles&sortDir=' + ${reverseDir}}">ROLES</a>
 							
 							<span th:if="${sortField == 'roles'}" th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'} "></span>
 						</th>
 						
 						<!-- ENABLED without using fragment -->
 						<th>
-							<a th:if="${sortField != 'enabled'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=enabled&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Enabled</a>
+							<a th:if="${sortField != 'enabled'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=enabled&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">ENABLED</a>
 							
-							<a th:if="${sortField == 'enabled'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=enabled&sortDir=' + ${reverseDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Enabled</a>
+							<a th:if="${sortField == 'enabled'}" class="text-white" th:href="@{'/users/page/' + ${currentPage} +'?sortField=enabled&sortDir=' + ${reverseDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">ENABLED</a>
 							
 							<span th:if="${sortField == 'enabled'}" th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'} "></span>
 						</th>
 						
-						<th>Options</th>
+						<th>OPTIONS</th>
 						
 					</tr>
 					
@@ -100,18 +83,18 @@
 				
 				<tbody>
 					<tr th:each=" user : ${allUsers}">
-						<td class="hideable-column">[[${user.id}]]</td>
+						<td class="hideable-column" style="font-weight: 800">[[${user.id}]]</td>
 						<td >
 							<span th:if="${user.photots == null}"><i class="fas fa-user-circle fa-4x"></i></span>
 							
-							<img th:if="${user.photots != null}" th:src="@{${user.getPhotosImagePath}}" alt="Picture" style="width:80px; height: 70px"/>
+							<img th:if="${user.photots != null}" th:src="@{${user.getPhotosImagePath}}" alt="Picture" style="width:120px; height: 100px"/>
 						</td>
 						
-						<td class="hideable-column">[[${user.email}]]</td>
-						<td>[[${user.firstName}]]</td>
-						<td>[[${user.lastName}]]</td>
-						<td>[[${user.roles}]]</td>
-						<td>
+						<td style="font-weight: 600" class="hideable-column">[[${user.email}]]</td>
+						<td style="font-weight: 800">[[${user.firstName}]]</td>
+						<td style="font-weight: 800">[[${user.lastName}]]</td>
+						<td style="font-weight: 800">[[${user.roles}]]</td>
+						<td >
 							<a th:if="${user.enabled == true}" th:href="@{'/users/' + ${user.id} +'/enabled/false'}" title="Disable this user" class="fas fa-check-circle colorEnabled"></a>
 							
 							<a th:if="${user.enabled == false}" th:href="@{'/users/' + ${user.id} +'/enabled/true'}" title="Enable this user" class="fas fa-times colorDisabled"></a>
@@ -132,7 +115,7 @@
 		</div>
 		
 		
-		<div class="less-details ">
+		<div class="less-details">
 			<div th:each=" user : ${allUsers}" class="row">
 				
 				<div class="col-4 ml-1">
@@ -143,8 +126,8 @@
 				
 				
 				<div class="col-7 m-2">
-					<div>[[${user.getFullName}]]</div>	
-					<div>Role: <strong>[[${user.roles}]]</strong></div>	
+					<div style="font-weight: 800">[[${user.getFullName}]]</div>	
+					<div style="font-weight: 500">ROLE: <strong>[[${user.roles}]]</strong></div>	
 					<div class="mt-1">
 
 						<a th:if="${user.enabled == true}" th:href="@{'/users/' + ${user.id} +'/enabled/false'}" title="Disable this user" class="fas fa-check-circle colorEnabled"></a>
@@ -166,53 +149,7 @@
 			</div>
 		</div>
 		
-		<div class="text-center m-2" th:if="${totalItems > 0 }">
-			<span><h5>Showing users: [[${startCount}]] to [[${endCount}]] of [[${totalItems}]] total users.</h5></span>
-		</div>
-		
-		<div class="text-center m-2" th:unless="${totalItems > 0 }">
-			<span><h5>No users found</h5></span>
-		</div>
-		
-		
-		
-		
-		<div th:if="${totalPages > 1}">
-			<nav>
-		  		<ul class="pagination justify-content-center flex-wrap">
-		  		
-		  			<li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-		  			
-		  				<a th:replace="fragments :: page_link(1,'First')" ></a>
-		  				
-		  			</li>
-		  			
-				    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
-				    
-				    	<a th:replace="fragments :: page_link(${currentPage -1},'Previous')" ></a>
-				    
-				    </li>
-				    
-				    <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" th:each="i : ${#numbers.sequence(1,totalPages)}">
-				    
-				    	<a th:replace="fragments :: page_link(${i},${i})" ></a>
-				    
-				    </li>
-				    
-				    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-				    
-				    	<a th:replace="fragments :: page_link(${currentPage + 1},'next')" ></a>
-				    
-				    </li>
-				    
-				    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
-				    
-				    	<a th:replace="fragments :: page_link(${totalPages},'Last')" ></a>
-				    
-				    </li>
-		  		</ul>
-			</nav>
-		</div>
+		<div th:replace="fragments :: pagination('/users','users')"></div>
 		
 		<div th:replace="fragments :: footer"></div>
 	

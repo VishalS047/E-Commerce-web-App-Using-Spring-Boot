@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	
+	<div th:fragment="pdetails" th:remove="tag">
+	
+		
+	</div>
+	
+</body>
+</html>

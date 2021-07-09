@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	
+	<div th:fragment="pdetails" th:remove="tag">
+	
+		<label for="">The following info is required to calculate the <Strong>shipping cost</Strong> for the product.</label>
+		<p>The dimensions (L * W * H) is for the box that is used to pack the product(Not the product's dimension)</p>
+		
+	</div>
+	
+</body>
+</html>

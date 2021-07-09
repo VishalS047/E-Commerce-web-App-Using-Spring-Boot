@@ -1,0 +1,31 @@
+package com.shopme.restcontroller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.shopme.service.BrandService;
+
+@RestController
+public class BrandRestController {
+
+	@Autowired
+	private BrandService brandService;
+	
+	@PostMapping(path = "/brands/check_unique")
+	public String checkUniqueness(@Param("brandId") Integer id, @Param("brandName") String name) {
+		System.out.println("JAI SHREE RAM");
+		return this.brandService.checkUnique(id, name);
+	}
+	
+	@GetMapping(path = "/brands/{id}/categories")
+	public List<CategoryDTO> listCategories() {
+		
+		
+		
+	}
+}

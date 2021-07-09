@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head
+	th:replace="fragments :: page_header('Product Form - Shopify Admin')"></head>
+
+<body>
+	<div class="container-fluid">
+
+		<div th:replace="navigationfragment ::  menu"></div>
+
+		<div class="container">
+
+			<form th:action="@{/products/save}" method="post" th:object="${product}" onclick="return checkUnique(this)">
+						
+				<input type="hidden" th:field="*{id}">
+				
+				<h3 class="text-center text-uppercase" th:if="${product.id == null}">Create Product Form</h3>
+				
+				<div>
+				
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					  <li class="nav-item" role="presentation">
+					    <a class="nav-link active"  data-toggle="tab" href="#overview" role="tab">Overview</a>
+					  </li>
+					  <li class="nav-item" role="presentation">
+					    <a class="nav-link"  data-toggle="tab" href="#description" role="tab">Description</a>
+					  </li>
+					  <li class="nav-item" role="presentation">
+					    <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
+					  </li>
+					  <li class="nav-item" role="presentation">
+					    <a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
+					  </li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+					
+					  <div class="tab-pane active m-5" id="overview" role="tabpanel">
+					  
+					  	<div th:replace="products/product_overview :: pcontent">
+					  	
+					  	</div>
+					  	
+					  </div>
+					  
+					  <div class="tab-pane" id="description" role="tabpanel">
+					  
+					  	<div th:replace="products/product_description :: pdescription">	
+					  
+					  	</div>
+					  
+					  </div>
+					  <div class="tab-pane" id="images" role="tabpanel">Images</div>
+					  
+					  <div class="tab-pane m-3" id="details" role="tabpanel">
+					  
+					  	<div th:replace="products/product_details :: pdetails">	
+					  
+					  	</div>
+					  	
+					  </div>
+					</div>
+				
+				</div>
+					
+				<div class="text-center">
+								
+					<button type="submit" class="btn btn-primary mb-2">Save</button>
+		
+					<button type="button" class="btn btn-secondary mb-2" id="cancelBtn">Cancel</button>
+								
+				</div>
+			</form>
+			
+		</div>
+
+
+		<div th:replace="modal_fragments::modal_dialog"></div>
+
+		<div th:replace=" fragments :: footer"></div>
+
+	</div>
+
+</body>
+
+
+<script type="text/javascript">
+		
+		moduleURL = "[[@{/products}]]";
+		
+		brandModuleURL = "[[@{/brands}]]";
+		
+		dropDownBrand = $("#brand");
+		
+		dropDownCategory = $("#category");
+		
+		$(document).ready(function() {
+		
+			$("#shortDescription").richText();
+			$("#fullDescrption").richText();
+			
+			dropDownBrand.change(function(){
+				
+				dropDownCategory.empty();
+				getCategories();
+				
+			});
+			
+			getCategories();
+			
+		});
+		
+		function getCategories() {
+		
+			brandId = dropDownBrand.val();
+			
+			url = brandModuleURL + "/" + brandId + "/categories";
+			
+			$.get(url, function(responseJSON) {
+			
+				$.each(responseJSON, function(index, category) {
+				
+					$("<option>").val(category.id).text(category.name).appendTo(dropDownCategory);
+					
+				});
+			});
+		};
+		
+		function checkUnique(form) {
+			productId = $("#id").val();
+			productName = $("#name").val();
+			csrfValue = $("input[name='_csrf']").val();
+			
+			url = "[[@{/products/checkUnique}]]";
+			
+			params = {id : productId, name : productName, _csrf : csrfValue};
+			
+			$.post(url, params, function(response) {
+				if(response == "OK") {
+					form.submit();
+				}else if(response == "DUPLICATE") {
+					showWarningModal("There is another product with name" + productName);
+				} 
+				else {
+					showErrorModal("Unknown response from the server");
+				}
+			}).fail(function() {
+				showErrorModal(Could not connect to the server);
+			});
+			
+			return false;
+		}
+		
+</script>
+
+<script type="text/javascript" th:src="@{/js/common_form.js}"></script>
+
+</html>
