@@ -147,6 +147,12 @@ public class CategoryService {
 	}
 
 	public Category saveCategory(Category category) {
+		Category parent = category.getParent();
+		if(parent!=null) {
+			String allParentIDs = parent.getAllParentIDs() == null ? "-" : parent.getAllParentIDs();
+			allParentIDs  = allParentIDs + String.valueOf(parent.getCid()) + "-";
+			category.setAllParentIDs(allParentIDs);
+		}
 		return this.categoryRepository.save(category);
 	}
 

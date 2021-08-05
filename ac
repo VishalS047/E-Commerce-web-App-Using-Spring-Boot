@@ -1,0 +1,35 @@
+[33mcommit 56729b0e772faf24a935cacb712da6a0cfeca8d1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Vishal Sharma <iamvishal047@gmail.com>
+Date:   Sat Jul 10 03:18:09 2021 +0530
+
+    Added product category till choosing image
+
+[33mcommit d7b3016493fb02a2247deef9c9e152676c6b837d[m
+Author: Vishal Sharma <iamvishal047@gmail.com>
+Date:   Wed Jun 9 08:14:30 2021 +0530
+
+    Implemeted edit delete find duplicate in Category module
+
+[33mcommit b84b069af1c0769fb0b08b0b4745697f6a370a6f[m
+Author: Vishal Sharma <iamvishal047@gmail.com>
+Date:   Fri Jun 4 05:42:12 2021 +0530
+
+    modified the UI and implemented categories functionalities
+
+[33mcommit b747085e56e223ea93ab00a1697f5e279de0877c[m
+Author: Vishal Sharma <iamvishal047@gmail.com>
+Date:   Sun May 23 17:59:57 2021 +0530
+
+    Implemented pagination and sorting of users
+
+[33mcommit 0be66b4e2eba75005f36d72ab165d6c187dcda27[m
+Author: Vishal Sharma <iamvishal047@gmail.com>
+Date:   Mon May 17 05:41:43 2021 +0530
+
+    first commit || Completed Edit and Delete module of User
+
+[33mcommit 4f215b3d845850c945705183ebbe57827c19d164[m
+Author: Vishal Sharma <iamvishal047@gmail.com>
+Date:   Mon May 17 05:40:45 2021 +0530
+
+    first commit

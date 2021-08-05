@@ -1,8 +1,11 @@
 
 package com.shopme.common.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -32,7 +35,7 @@ public class Product {
 	@Column(nullable = false, length = 256, unique = true)
 	private String alias;
 	
-	@Column(name = "short_description", nullable = false, length = 512)
+	@Column(name = "short_description", nullable = false, length = 2000)
 	private String shortDescription;
 	
 	@Column(name = "full_description", nullable = false, length = 4000)
@@ -62,11 +65,15 @@ public class Product {
 	private float height;
 	private float weight;
 	
-	@Column(name = "main_image", nullable = false)
+	@Column(name = "main_image", nullable = true)
 	private String mainImage;
 	
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<ProductImage> images = new HashSet<>();
+	
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<ProductDetails> details = new ArrayList<>();
+	
 	
 
 	@ManyToOne
@@ -80,11 +87,19 @@ public class Product {
 	public Set<ProductImage> getImages() {
 		return images;
 	}
-
+	
 	public void setImages(Set<ProductImage> images) {
 		this.images = images;
 	}
+	
+	public List<ProductDetails> getDetails() {
+		return details;
+	}
 
+	public void setDetails(List<ProductDetails> details) {
+		this.details = details;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -245,14 +260,44 @@ public class Product {
 				+ ", discountPercentage=" + discountPercentage + ", length=" + length + ", width=" + width + ", height="
 				+ height + ", weight=" + weight + ", category=" + category + ", brand=" + brand + "]";
 	}
+	
 	public void addExtraImage(String imageName) {
 		this.images.add(new ProductImage(imageName,this));
 	}
 	
-	@Transient
+	public void addDetails(String productName, String productValue) {
+		System.out.println("This is: " + this);
+		this.details.add(new ProductDetails(productName, productValue, this));
+	}
+	
+	public void addDetails(Integer id, String productName, String productValue) {
+		System.out.println("This is: " + this);
+		this.details.add(new ProductDetails(id, productName, productValue, this));
+	}
+	
+	
 	public String getMainImagePath() {
 		if(this.id == null || this.mainImage == null)
 			return "/images/image-thumbnail.png";
 		return "/product-images/" + this.id + "/" + this.mainImage;
+	}
+
+	public boolean containsImageName(String imageName) {
+		Iterator<ProductImage> iterator = images.iterator();
+		while(iterator.hasNext()) {
+			ProductImage image = iterator.next();
+			if(image.getName().equals(imageName)) {
+				return true; 
+			}
+		}
+		return false;
+	}
+	
+	@Transient
+	public String getShortName() {
+		if(this.name.length() > 70) {
+			return this.name.substring(0, 70).concat("...");
+		}
+		return name;
 	}
 }

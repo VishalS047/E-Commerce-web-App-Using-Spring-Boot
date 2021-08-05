@@ -14,9 +14,10 @@
 			<form th:action="@{/products/save}" method="post" th:object="${product}" onsubmit="return checkUnique(this)" enctype="multipart/form-data">
 						
 				<input type="hidden" th:field="*{id}">
+				<input th:if="${product.category!=null}" type="hidden" id="categoryId" th:value="${product.category.cid}" />
 				
 				<h3 class="text-center text-uppercase" th:if="${product.id == null}">Create Product Form</h3>
-				
+				<h3 class="text-center text-uppercase" th:if="${product.id != null}">Edit Product </h3>
 				<div>
 				
 					<!-- Nav tabs -->
@@ -31,7 +32,10 @@
 					    <a class="nav-link" data-toggle="tab" href="#images" role="tab">Images</a>
 					  </li>
 					  <li class="nav-item" role="presentation">
-					    <a class="nav-link" data-toggle="tab" href="#details" role="tab">Details</a>
+					    <a class="nav-link" data-toggle="tab" href="#details" role="tab">Product Details</a>
+					  </li>
+					  <li class="nav-item" role="presentation">
+					    <a class="nav-link" data-toggle="tab" href="#shipping" role="tab">Shipping Details</a>
 					  </li>
 					</ul>
 
@@ -46,7 +50,7 @@
 					  	
 					  </div>
 					  
-					  <div class="tab-pane" id="description" role="tabpanel">
+					  <div class="tab-pane m-3" id="description" role="tabpanel">
 					  
 					  	<div th:replace="products/product_description :: pdescription">	
 					  
@@ -54,7 +58,7 @@
 					  
 					  </div>
 					  
-					  <div class="tab-pane m-3" id="images" role="tabpanel">
+					  <div class="tab-pane m-5" id="images" role="tabpanel">
 					  
 					  	<div th:replace="products/product_Images :: pImages">
 					  	
@@ -62,13 +66,26 @@
 					  	
 					  </div>
 					  
-					  <div class="tab-pane m-3" id="details" role="tabpanel">
+					  <div class="tab-pane m-4" id="details" role="tabpanel">
 					  
-					  	<div th:replace="products/product_details :: pdetails">	
+					  	<div th:replace="products/product_details:: pdetails">
+					  	</div>
+					  	
+					  	<div class="container">
+					  		<input type="button" class="btn btn-secondary" value="Add More.." onclick="addNextDetailOption()"/> 
+					  	</div>
+					  
+					  </div>
+					  
+					  
+					  <div class="tab-pane m-3" id="shipping" role="tabpanel">
+					  
+					  	<div th:replace="products/product_shipping :: pshipping">	
 					  
 					  	</div>
 					  	
 					  </div>
+					  
 					</div>
 				
 				</div>
@@ -100,9 +117,15 @@
 		
 		brandModuleURL = "[[@{/brands}]]";
 		
+		addImageOption = "[[@{/images/image-thumbnail.png}]]";
+		
+		checkUniqueURL = "[[@{/products/checkUnique}]]";
+		
 </script>
 
 <script type="text/javascript" th:src="@{/js/common_form.js}"></script>
-<script type="text/javascript" th:src="@{/js/product_form.js}"></script>
+<script type="text/javascript" th:src="@{/js/product_form_overview.js}"></script>
+<script type="text/javascript" th:src="@{/js/product_form_images.js}"></script>
+<script type="text/javascript" th:src="@{/js/add_new_detail_section.js}"></script>
 
 </html>

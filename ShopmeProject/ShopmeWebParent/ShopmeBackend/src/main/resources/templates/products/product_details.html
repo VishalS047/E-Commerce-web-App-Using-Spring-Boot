@@ -2,39 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
-	
-	<div th:fragment="pdetails" th:remove="tag">
-	
-		<label for="">The following info is required to calculate the <Strong>shipping cost</Strong> for the product.</label>
-		<p>The dimensions <strong>(L * W * H)</strong> is for the box that is used to pack the product.(Not the product's dimension)</p>
-		
-		<div class="form-group row ">
-			<label for="len" class="col-sm-4 col-form-label">LENGTH (in <strong>inches</strong>)</label>
-			<div class="col-sm-8">
-				<input type="number" step="0.01" class="form-control" th:field="*{length}" name="len" id="len" required="required"  />
+
+	<div th:fragment="pdetails" id="divProductDetails" class="m-3">
+			
+			<th:block th:each="detail,status : ${product.details}">
+				
+				<div class="form-inline" th:id="'divDetail' + ${status.index}">
+				
+					<input type="hidden" name="detailIDs" th:value="${detail.id}" />
+					
+					<label class="m-3">Name</label>
+					
+					<input class="form-control w-25" type="text"  name="detailNames" maxlength="255" placeholder="enter detail.." 
+						th:value="${detail.name}"/>
+					
+					<label class="ml-5 m-3">Value</label>
+					
+					<input class="form-control w-25" type="text" name="detailValues" maxlength="255" placeholder="enter detail.." 
+						th:value="${detail.value}"/>
+					
+					<a  name="linkRemoveDetail" class="btn fas fa-times-circle fa-x icon-light float-right" title="Remove this detail"
+						href="javascript:removeImage(${index - 1})" ></a>
+				</div>
+			
+			</th:block>
+			
+			<div class="form-inline" th:id="'divDetail' + ${#lists.size(product.details)}">
+				
+				<input type="hidden" name="detailIDs" value="0" />
+				 
+				<label class="m-3">Name</label>	
+				<input class="form-control w-25" type="text" name="detailNames" maxlength="255" placeholder="enter detail.."/>
+				
+				<label class="ml-5 m-3">Value</label>
+				<input class="form-control w-25" type="text" name="detailValues" maxlength="255" placeholder="enter detail.."/>
+				
 			</div>
-		</div>
-		
-		<div class="form-group row ">
-			<label for="width" class="col-sm-4 col-form-label">WIDTH (in <strong>inches</strong>)</label>
-			<div class="col-sm-8">
-				<input type="number" step="0.01" class="form-control" th:field="*{width}" name="width" id="width" required="required"  />
-			</div>
-		</div>
-		<div class="form-group row ">
-			<label for="height" class="col-sm-4 col-form-label">HEIGHT (in <strong>inches</strong>)</label>
-			<div class="col-sm-8">
-				<input type="number" step="0.01" class="form-control" th:field="*{height}" name="height" id="height" required="required"  />
-			</div>
-		</div>
-		<div class="form-group row ">
-			<label for="weight" class="col-sm-4 col-form-label">WEIGHT (in <strong>KGs</strong>)</label>
-			<div class="col-sm-8">
-				<input type="number" class="form-control" th:field="*{weight}" name="weight" id="weight" required="required"  />
-			</div>
-		</div>
-		
+			
 	</div>
-	
+
 </body>
 </html>

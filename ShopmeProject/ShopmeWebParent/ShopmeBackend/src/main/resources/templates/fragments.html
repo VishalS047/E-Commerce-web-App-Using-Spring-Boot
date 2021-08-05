@@ -146,5 +146,17 @@
 		
 	</th>
 	
+	<th th:fragment="column_link_for_product(moduleURL, currentPage , fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
+	
+		<a class="text-white" th:href="@{${moduleURL} + '/page/' + ${currentPage} +'?sortField='+ ${fieldName} +
+		'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${columnLabel}]]</a>
+
+		<span th:if="${sortField == fieldName}"
+			th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'} ">
+		</span>
+		
+	</th>
+	
+	
 </body>
 </html>

@@ -1,3 +1,5 @@
+var extraImageCount = 0;
+
 dropDownBrand = $("#brand");
 
 dropDownCategory = $("#category");
@@ -16,7 +18,76 @@ $(document).ready(function() {
 
 	getCategories();
 
+	$("input[name='extraImage']").each(function(index) {
+		extraImageCount++;
+		
+		$(this).change(function() {
+			showExtraImageThumbnail(this, index)
+		});
+	});
+
 });
+
+
+function showExtraImageThumbnail(fileInput, index) {
+	var file = fileInput.files[0];
+	console.log(file);
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		$("#extraThumbnail" + index).attr("src", e.target.result);
+	};
+	reader.readAsDataURL(file);
+
+	if (index >= extraImageCount - 1) {
+		addExtraImageSection(index + 1);
+	}
+
+}
+
+
+function addExtraImageSection(index) {
+	htmlforExtraImage = `
+		<div class="col-xl-4 card" id="divRemoveImage${index}">
+				
+				<div class="text-center" id="extraImageHeader${index}">
+				
+					<h5>Extra Image-${index + 1}</h5>
+					
+				</div>
+				
+				<div>
+				
+					<img id ="extraThumbnail${index}" src="${addImageOption}" style="height: 300px;width: 338px" 
+					alt="extra image-${index + 1} preview" class="image-fluid" />
+					
+				</div>
+				
+				<div class="mt-3 mb-2">
+				
+					<input type="file" name="extraImage" 
+						onchange="showExtraImageThumbnail(this,${index})"
+					accept="image/png, image.jpg" />
+					
+				</div>
+			</div>
+			
+		</div>
+	`;
+
+	htmlLinkRemove = `
+		<a class="btn fas fa-times-circle fa-x icon-light float-right" title="Remove this Image"
+		href="javascript:removeImage(${index - 1})"
+		></a>
+	`;
+
+	$("#productImagesAddFeature").append(htmlforExtraImage);
+	$("#extraImageHeader" + (index - 1)).append(htmlLinkRemove);
+	extraImageCount++;
+}
+
+function removeImage(index) {
+	$("#divRemoveImage" + index).remove();
+}
 
 function getCategories() {
 
@@ -42,11 +113,10 @@ function checkUnique(form) {
 
 	csrfValue = $("input[name='_csrf']").val();
 
-	url = "[[@{/products/checkUnique}]]";
+	
+	params = { id: productId, name: productName, _csrf: csrfValue };
 
-	params = { id: productId , name: productName, _csrf: csrfValue };
-
-	$.post(url, params, function(response) {
+	$.post(checkUniqueURL, params, function(response) {
 
 
 

@@ -1,6 +1,0 @@
-package com.shopme.exception;
-
-
-public class BrandNotFoundRestException extends Exception {
-
-}

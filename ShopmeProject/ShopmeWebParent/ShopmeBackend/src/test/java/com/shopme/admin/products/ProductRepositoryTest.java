@@ -3,8 +3,6 @@ package com.shopme.admin.products;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Date;
-import java.util.Optional;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -100,5 +98,30 @@ public class ProductRepositoryTest {
 		
 		Product save = this.productRepository.save(product);
 		assertThat(save.getImages().size()).isEqualTo(5);
+	}
+	
+	@Test
+	public void saveProductWithDetails() {
+		Integer productId = 439;
+		Product product = this.productRepository.findById(productId).get();
+		System.out.println(product);
+		product.addDetails("Dedicated Graphic Memory Type", "GDDR6");
+		product.addDetails("Dedicated Graphic Memory Capacity", "4 GB");
+		product.addDetails("Processor Brand", "AMD");
+		product.addDetails("Processor Name", "Ryzen 5 Hexa Core");
+		product.addDetails("SSD", "Yes");
+		product.addDetails("RAM", "8 GB");
+		product.addDetails("RAM TYPE", "DDR4");
+		product.addDetails("HDD CAPACITY", "1 TB");
+		product.addDetails("PROCESSOR VARIANT", "4600H");
+		product.addDetails("CHIPSET", "AMD SoC Platform");
+		product.addDetails("Clock Speed", "3.0 GHz with Turbo Boost Upto 4.0 Ghz");
+		product.addDetails("Memory Slots", "2 slots");
+		product.addDetails("RAM Frequency", "3200 MHz");
+		product.addDetails("GRAPHIC PROCESSOR", "NVIDIA GeForce GTX 1650");
+		product.addDetails("NUMBER OF CORES", "6 Core");
+		Product save = this.productRepository.save(product);
+		System.out.println(save.getDetails());
+		assertThat(save.getDetails()).isNotEmpty();
 	}
 }

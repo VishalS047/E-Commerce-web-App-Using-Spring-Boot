@@ -50,7 +50,6 @@ public class BrandRestController {
 			return listCategories;
 			
 		} catch (BrandNotFoundException e) {
-			// TODO Auto-generated catch block
 			throw new BrandNotFoundRestException();
 		}
 	}

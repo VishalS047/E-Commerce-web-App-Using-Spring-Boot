@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ShopmeBackend/src/main/resources/templates/products/view-product-modal.html&apos; to &apos;view-product-detail-modal.html&apos;" description="Rename resource &apos;view-product-modal.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/products/view-product-modal.html" name="view-product-detail-modal.html" stamp="1628117881849" updateReferences="true"/>
+</session>

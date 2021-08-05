@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+	<div th:fragment="pdetails" id="divProductDetails" class="m-3">
+			
+			<th:block th:each="detail,status : ${product.details}">
+				
+			<div class="form-inline" th:id="'divDetail' + ${status.index}">
+				<label class="m-3">Name</label>
+				<input class="form-control w-25" type="text"  name="detailNames" maxlength="255" placeholder="enter detail.." th:value="${detail.name}"/>
+				
+				<label class="ml-5 m-3">Value</label>
+				<input class="form-control w-25" type="text" name="detailValues" maxlength="255" placeholder="enter detail.." th:value="${detail.value}"/>
+			</div>
+				
+			
+			</th:block>
+			
+			<div class="form-inline" th:id="'divDetail' + ${#lists.size(product.details)}">
+				<label class="m-3">Name</label>
+				<input class="form-control w-25" type="text"  name="detailNames" maxlength="255" placeholder="enter detail.."/>
+				
+				<label class="ml-5 m-3">Value</label>
+				<input class="form-control w-25" type="text" name="detailValues" maxlength="255" placeholder="enter detail.."/>
+			</div>
+	</div>
+
+</body>
+</html>

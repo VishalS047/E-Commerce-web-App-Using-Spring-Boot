@@ -52,10 +52,30 @@
 			
 			<div class="col-sm-8">
 			
-				<select th:field="*{category}" class="form-control" required="required" name="category" id="category">
+				<th:block th:if="${product.category != null}">
+			
+					<select th:field="*{category}" class="form-control" required="required">
+					
+						<th:block th:each=" cat : ${product.brand.categories}">
+						
+							<option th:value="${cat.cid}">[[${cat.name}]]</option>
+							
+						</th:block>
+						
+					</select>
+			
+				</th:block>
 				
-				</select>
+				<th:block th:if="${product.category == null}">
+					
+					<select th:field="*{category}" class="form-control" required="required" name="category" id="category">
+				
+					</select>
+				
+				</th:block>
+				
 			</div>
+			
 		</div>
 		
 		<!-- is enabled -->
