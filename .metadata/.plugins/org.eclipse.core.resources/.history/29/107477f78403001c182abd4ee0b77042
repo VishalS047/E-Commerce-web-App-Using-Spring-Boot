@@ -1,0 +1,31 @@
+package com.shopme.product;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.shopme.common.entity.Category;
+import com.shopme.service.CategoryService;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	private CategoryService categoryService;
+
+	@GetMapping(path = "/c/{category_alias}")
+	public String viewCategory(@PathVariable("category_alias") String alias) {
+
+		Category category = this.categoryService.getEnabledCategory(alias);
+
+		if (category == null) {
+			return "error/404";
+		}
+
+		System.out.println(category.getName());
+
+		return "products_by_category";
+	}
+
+}

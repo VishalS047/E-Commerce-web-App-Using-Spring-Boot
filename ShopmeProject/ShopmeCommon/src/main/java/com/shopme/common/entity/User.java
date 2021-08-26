@@ -141,4 +141,15 @@ public class User {
 	public String getFullName() {
 		return this.firstName+" "+ this.lastName;
 	}
+	
+	public boolean hasRole(String roleName) {
+		Iterator<Role> iterator = this.roles.iterator();
+		while(iterator.hasNext()) {
+			Role role = iterator.next();
+			if(role.getName() == roleName) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

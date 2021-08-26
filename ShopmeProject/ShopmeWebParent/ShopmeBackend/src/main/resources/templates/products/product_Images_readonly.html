@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+	<div th:fragment="pImages" th:remove="tag">
+		
+		<div class="row" id="productImagesAddFeature">
+		
+			<div class="col-xl-4 card">
+				
+				<div class="text-center">
+				
+					<h5>Main Image ([[${product.mainImage}]])</h5>
+					
+				</div>
+				
+				<div>
+				
+					<img id="thumbnail" th:src="@{${product.getMainImagePath}}" style="height: 300px;width: 318px"
+					alt="main image preview" class="image-fluid" />
+					
+				</div>
+				
+			</div>
+			
+			<th:block th:each="productExtraImage,status : ${product.images}" >
+				
+				<div class="col-xl-4 card" th:id="'divRemoveImage' + ${status.index}">
+					
+					<div class="text-center">
+					
+						<h5> Extra Image-[[${status.index+1}]] ([[${productExtraImage.name}]])</h5>
+					
+					</div>
+				 		
+					<div>
+				
+						<img th:src="@{${productExtraImage.imagePath}}" style="height: 300px;width: 318px" 
+						th:alt="'extra image-' + ${status.index + 1} + 'preview'" class="image-fluid" />
+					
+					</div>
+					
+					
+				</div>
+				
+			</th:block>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>

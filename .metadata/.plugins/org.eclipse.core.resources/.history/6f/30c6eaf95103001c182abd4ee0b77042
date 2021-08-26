@@ -1,0 +1,25 @@
+package com.shopme.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shopme.common.entity.Category;
+import com.shopme.repository.CategoryRespository;
+
+@Service
+public class CategoryService {
+	
+	@Autowired
+	public CategoryRespository categoryRespository;
+	
+	public List<Category> listNoChildrenCategories() {
+		
+		List<Category> listNoChildrenCategories = new ArrayList<Category>();
+		
+		List<Category> findAllEnabled = this.categoryRespository.findAllEnabled();
+		
+	}
+}

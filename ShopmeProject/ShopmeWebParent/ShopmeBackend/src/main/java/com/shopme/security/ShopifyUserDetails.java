@@ -84,4 +84,8 @@ public class ShopifyUserDetails implements UserDetails {
 	public void setLasrName(String lastName) {
 		this.user.setLastName(lastName);
 	}
+	
+	public boolean hasRole(String roleName) {
+		return this.user.hasRole(roleName);
+	}
 }

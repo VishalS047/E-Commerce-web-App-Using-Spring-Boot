@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="add"/>
+		<item key="selection" value="checkUniqueURL"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="checkUniqueURL"/>
+			<item value="checkU"/>
+			<item value="check"/>
+			<item value="categoryMatch"/>
+			<item value="categoryID"/>
 			<item value="add"/>
 			<item value="save"/>
 			<item value="brnadName"/>
@@ -18,11 +23,6 @@
 			<item value="user.id"/>
 			<item value="User.id"/>
 			<item value="user"/>
-			<item value="listCa"/>
-			<item value="moduleURL"/>
-			<item value="cancelBtn"/>
-			<item value="cancel"/>
-			<item value="getFullName"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

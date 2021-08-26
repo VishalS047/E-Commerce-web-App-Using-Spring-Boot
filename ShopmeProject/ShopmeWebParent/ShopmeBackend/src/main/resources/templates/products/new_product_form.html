@@ -51,25 +51,38 @@
 					  </div>
 					  
 					  <div class="tab-pane m-3" id="description" role="tabpanel">
-					  
-					  	<div th:replace="products/product_description :: pdescription">	
-					  
-					  	</div>
+					  	
+					  	<th:block sec:authorize="hasAnyAuthority('Salesperson')">
+					  		<div th:replace="products/product_description_readonly :: pdescription"></div>
+					  	</th:block>
+					  	
+					  	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+					  		<div th:replace="products/product_description :: pdescription"></div>
+					  	</th:block>
 					  
 					  </div>
 					  
 					  <div class="tab-pane m-5" id="images" role="tabpanel">
 					  
-					  	<div th:replace="products/product_Images :: pImages">
-					  	
-					  	</div>
+						  	  <th:block sec:authorize="hasAnyAuthority('Salesperson')">
+						  			<div th:replace="products/product_Images_readonly :: pImages"></div>
+						  	  </th:block>
+					  
+							  <th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+							  		<div th:replace="products/product_Images :: pImages"></div>
+							  </th:block>
 					  	
 					  </div>
 					  
 					  <div class="tab-pane m-4" id="details" role="tabpanel">
-					  
-					  	<div th:replace="products/product_details:: pdetails">
-					  	</div>
+					  	
+					  	<th:block sec:authorize="hasAnyAuthority('Salesperson')">
+						  	<div th:replace="products/product_details_readonly :: pdetails"></div>
+						</th:block>
+					  	
+					  	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+					  		<div th:replace="products/product_details :: pdetails"></div>
+					  	</th:block>
 					  	
 					  	<div class="container">
 					  		<input type="button" class="btn btn-secondary" value="Add More.." onclick="addNextDetailOption()"/> 
@@ -79,10 +92,14 @@
 					  
 					  
 					  <div class="tab-pane m-3" id="shipping" role="tabpanel">
-					  
-					  	<div th:replace="products/product_shipping :: pshipping">	
-					  
-					  	</div>
+					  	
+						  	<th:block sec:authorize="hasAnyAuthority('Salesperson')">
+							  	<div th:replace="products/product_shipping_readonly :: pshipping"></div>
+							</th:block>
+						  	
+						  	<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+						  		<div th:replace="products/product_shipping :: pshipping"></div>
+						  	</th:block>
 					  	
 					  </div>
 					  
@@ -97,6 +114,7 @@
 					<button type="button" class="btn btn-secondary mb-2" id="cancelBtn">Cancel</button>
 								
 				</div>
+				
 			</form>
 			
 		</div>

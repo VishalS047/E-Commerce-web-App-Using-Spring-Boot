@@ -87,7 +87,7 @@
 						<td >
 							<span th:if="${user.photots == null}"><i class="fas fa-user-circle fa-4x"></i></span>
 							
-							<img th:if="${user.photots != null}" th:src="@{${user.getPhotosImagePath}}" alt="Picture" style="width:120px; height: 100px"/>
+							<img th:if="${user.photots != null}" th:src="@{${user.getPhotosImagePath}}" class="image-fluid image-hover" alt="Picture" style="width:120px; height: 100px"/>
 						</td>
 						
 						<td style="font-weight: 600" class="hideable-column">[[${user.email}]]</td>

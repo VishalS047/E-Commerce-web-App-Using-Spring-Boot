@@ -300,4 +300,20 @@ public class Product {
 		}
 		return name;
 	}
+	
+	@Transient
+	public float getDiscountPrice() {
+		if(this.discountPercentage > 0) {
+			return this.cost * ((100 - this.discountPercentage) / 100);
+		}
+		return this.cost;
+	}
+	
+	@Transient
+	public float getDisCountPercentage() {
+		if(this.discountPercentage > 0) {
+			return (this.cost/this.price)*100;
+		}
+		return 0;
+	}
 }

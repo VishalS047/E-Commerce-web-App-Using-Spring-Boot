@@ -45,10 +45,10 @@
 
 	<th th:fragment="column_link(moduleURL,fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
 	
-	<a class="text-white" th:href="@{${moduleURL} + '/page/' + ${currentPage} +'?sortField='+ ${fieldName} + '&sortDir=' + ${sortField != fieldName ? sortDir : reverseDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">[[${columnLabel}]]</a>
+	<a class="text-white" th:href="@{${moduleURL} + '/page/' + ${currentPage} +'?sortField='+ ${fieldName} + '&sortDir=' + ${sortField != fieldName ? sortDir : reverseDir} + ${keyword != null ? '&keyword=' + keyword : ''} + ${categoryID != null ? '&categoryID=' + categoryID : ''}}">[[${columnLabel}]]</a>
 
 		<span th:if="${sortField == fieldName}"
-		th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'} ">
+			th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'} ">
 		</span>
 		
 	</th>
@@ -56,7 +56,7 @@
 	
 	
 	<a th:fragment="page_link(moduleURL,pageNum, label)"
-	 class="page-link" th:href="@{${moduleURL} +'/page/'+ ${pageNum} +'?sortField=' +${sortField} +'&sortDir=' + ${sortDir}}">[[${label}]]</a>
+	 	class="page-link" th:href="@{${moduleURL} +'/page/'+ ${pageNum} +'?sortField=' +${sortField} +'&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''} + ${categoryID != null ? '&categoryID=' + categoryID : ''}}">[[${label}]]</a>
 	 
 	 <div class="footer bg-dark " th:fragment="footer">
 			<h6>Shopify Control Panel - Copyright &copy; Shopify</h6>

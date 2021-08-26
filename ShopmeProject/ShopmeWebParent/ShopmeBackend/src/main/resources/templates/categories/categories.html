@@ -54,7 +54,7 @@
 							
 							<span th:if="${categories.image == null}"><i class="fas fas fa-folder-open fa-4x"></i></span>
 							
-							<img th:if="${categories.image != null}" th:src="@{${categories.getPhotosImagePath}}" alt="categoryPic" style="width:150px; height: 100px"/>
+							<img th:if="${categories.image != null}" th:src="@{${categories.getPhotosImagePath}}" class="image-fluid image-hover" alt="categoryPic" style="width:150px; height: 100px"/>
 						
 						</td>
 						<td style="font-weight: 800">[[${categories.name}]]</td>

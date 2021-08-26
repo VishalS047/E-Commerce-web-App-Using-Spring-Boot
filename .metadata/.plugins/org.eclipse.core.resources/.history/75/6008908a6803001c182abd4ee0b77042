@@ -1,0 +1,27 @@
+package com.shopme.repotest;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+
+@DataJpaTest(showSql = true)
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+public class CategoryRepositoryTests {
+
+	@Autowired
+	private CategoryRespository catRepo;
+	
+
+	@Test
+	public void testListEnabledCategories() {
+		List<Category> enabledCategories = this.catrepo.findAllEnabled();
+		enabledCategories.forEach(category -> {
+			System.out.println(category.getName() + " (" + category.isEnabled() + ")");
+		});
+	}
+}

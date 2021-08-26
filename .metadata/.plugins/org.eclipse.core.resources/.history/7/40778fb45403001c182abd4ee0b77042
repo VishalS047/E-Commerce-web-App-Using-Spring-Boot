@@ -1,0 +1,15 @@
+package com.shopme.frontend;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+@SpringBootApplication
+@ComponentScan({ "com.shopme.service", "com.shopme.controller", "com.shopme.security", "com.shopme.repository" })
+public class ShopmeFrontEndApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ShopmeFrontEndApplication.class, args);
+	}
+
+}

@@ -3,6 +3,7 @@ package com.shopme.common.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,15 +33,15 @@ public class Category {
 	private String image;
 
 	private boolean isEnabled;
-	
-	@Column(name="all_parent_ids", length = 256, nullable = true)
+
+	@Column(name = "all_parent_ids", length = 256, nullable = true)
 	private String allParentIDs;
-	
+
 	@OneToOne
 	@JoinColumn(name = "parent_id")
 	private Category parent;
 
-	@OneToMany(mappedBy = "parent")
+	@OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
 	private Set<Category> children = new HashSet<>();
 
 	public static Category copyIdandName(Category category) {
@@ -65,7 +66,7 @@ public class Category {
 		category2.setImage(category.getImage());
 		category2.setAlias(category.getAlias());
 		category2.setEnabled(category.isEnabled());
-		category2.setHasChildren(category.getChildren().size()>0);
+		category2.setHasChildren(category.getChildren().size() > 0);
 		return category2;
 	}
 
@@ -168,8 +169,7 @@ public class Category {
 //		System.out.println("/userphotos/" + this.id + "/" + this.photots);
 		return "/category-images/" + this.cid + "/" + this.image;
 	}
-	
-	
+
 	public String getAllParentIDs() {
 		return allParentIDs;
 	}
@@ -177,7 +177,6 @@ public class Category {
 	public void setAllParentIDs(String allParentIDs) {
 		this.allParentIDs = allParentIDs;
 	}
-
 
 	@Transient
 	private boolean hasChildren;

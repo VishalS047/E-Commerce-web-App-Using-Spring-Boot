@@ -1,0 +1,5 @@
+package com.shopme.service;
+
+public class CategoryService {
+
+}

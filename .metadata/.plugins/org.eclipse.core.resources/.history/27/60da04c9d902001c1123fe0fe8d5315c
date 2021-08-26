@@ -1,0 +1,4 @@
+package com.shopme;
+
+public class CategoryRepositoryTest {
+}

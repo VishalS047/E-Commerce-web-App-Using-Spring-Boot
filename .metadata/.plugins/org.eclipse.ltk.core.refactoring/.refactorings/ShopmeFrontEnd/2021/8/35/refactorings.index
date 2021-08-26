@@ -1,0 +1,19 @@
+1629632304057	Rename package 'com.shopme.repoTests'
+1629633246846	Rename type 'CategoryRepositoryTest'
+1629636570382	Delete element
+1629643191155	Delete element
+1629651252944	Delete element
+1629652333469	Rename package 'com.shopme.repotest'
+1629654868804	Rename type 'CategoryRepositoryTests'
+1629655903287	Rename package 'com.shopme.frontend.repotest'
+1629656536400	Rename package 'com.shopme.frontend'
+1629656774648	Copy compilation unit
+1629656811182	Delete element
+1629656818219	Move compilation unit
+1629656832506	Delete element
+1629656880160	Delete element
+1629660483644	Delete element
+1629661970671	Delete element
+1629662008381	Delete element
+1629662182135	Copy file
+1629667749836	Rename local variable 'listByCategoryProducts'

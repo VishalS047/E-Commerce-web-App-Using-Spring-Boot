@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments :: page_header(${pageTitle})"/>
+	
+	<body>
+			<div class="container-fluid">
+				<div th:replace="navigationfragment :: header_menu"></div>
+					
+					<div class="text-center m-3">
+						<h3>Products under - 
+							<strong style="color: purple; font-size: 30px; text-decoration: underline">
+								[[${catName}]]
+							</strong>
+						</h3> 
+					</div>
+					
+					<div th:if="${categoryParents!=null && !categoryParents.empty}">
+						<div class="row">
+							<div class="col">
+								<nav>
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item">
+											<a th:href="@{/}">Home</a>
+										</li>
+										<th:block th:each="parent : ${categoryParents}">
+											<li class="breadcrumb-item">
+												<a th:href="@{'/c/'+ ${parent.alias}}">[[${parent.name}]]</a>
+											</li>
+										</th:block>
+									</ol>
+								</nav>
+							</div>
+						</div>
+					</div>
+			</div>		
+			
+			<div class="container">
+			
+				<div class="row text-center">
+					<th:block th:each="category : ${category.children}">
+						<div th:if="${category.isEnabled == true} " class="m-1">
+							<a th:href="@{'/c/' + ${category.alias}}">
+								<img th:src="@{${category.getPhotosImagePath}}" alt="" width="150" height="120" style="border-radius: 200px"/>
+								<br />
+								<b>[[${category.name}]]</b>
+							</a>
+						</div>
+					</th:block>
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				&nbsp;
+			</div>
+			
+			<div class="container-fluid">
+				<div class="row">
+				<th:block th:each="product : ${listOfProducts}">
+					<div class="col-xl-2">
+						<div class="card m-2">
+							<div class="card-body text-center">
+								
+									<img th:src="@{${product.getMainImagePath}}" alt="product" width="200" height="150"/>
+								
+								&nbsp;
+								<hr />
+								<strong>[[${product.name}]]</strong>
+							</div>
+							<div th:if="${product.discountPercentage <= 0}">
+								<strong>&#8377;[[${product.cost}]]</strong>
+							</div>
+							
+							<div th:if="${product.discountPercentage > 0}">
+								<strong style="color: darkered">&#8377;[[${product.getDiscountPrice}]]</strong>
+								<strong>&#8377;[[${product.price}]]</strong>
+							</div>
+						</div>
+					</div>
+				</th:block>
+			</div>
+				
+			</div>
+				
+				
+			<div class="text-center">
+				<span>Showing Products</span>
+				<div th:replace="fragments :: pagination('/c/' + ${category.alias},'products')"></div>
+			</div>
+							
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				
+				
+				
+				
+				<div th:replace="navigationfragment :: footer_menu"></div>
+
+		
+	</body>
+	
+</html>

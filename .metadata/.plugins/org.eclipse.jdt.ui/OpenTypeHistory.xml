@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=ShopmeBackend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.security{ShopifyUserDetails.java[ShopifyUserDetails" modifiers="1" timestamp="1623188645825"/>
+    <typeInfo handle="=ShopmeBackend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.security{ShopifyUserDetails.java[ShopifyUserDetails" modifiers="1" timestamp="1628686036906"/>
     <typeInfo handle="=ShopmeBackend/C:\/Users\/Vishal Sharma\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.4.8\/spring-data-commons-2.4.8.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/2.4.8=/=/maven.scope=/compile=/&lt;org.springframework.data.repository(PagingAndSortingRepository.class[PagingAndSortingRepository" modifiers="1537" timestamp="1620671863987"/>
-    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{User.java[User" modifiers="1" timestamp="1621974039406"/>
     <typeInfo handle="=ShopmeBackend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.service{BrandService.java[BrandService" modifiers="1" timestamp="1625321423211"/>
     <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{Brand.java[Brand" modifiers="1" timestamp="1625136977255"/>
-    <typeInfo handle="=ShopmeBackend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.service{ProductService.java[ProductService" modifiers="1" timestamp="1626712964272"/>
+    <typeInfo handle="=ShopmeBackend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.service{ProductService.java[ProductService" modifiers="1" timestamp="1628685787667"/>
     <typeInfo handle="=ShopmeBackend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.controller{BrandController.java[BrandController" modifiers="1" timestamp="1625315188973"/>
     <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{ProductImage.java[ProductImage" modifiers="1" timestamp="1627764843800"/>
     <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{ProductDetails.java[ProductDetails" modifiers="1" timestamp="1627779070006"/>
-    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{Product.java[Product" modifiers="1" timestamp="1627779953856"/>
-    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{Category.java[Category" modifiers="1" timestamp="1623202318423"/>
+    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{User.java[User" modifiers="1" timestamp="1628685923008"/>
+    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{Category.java[Category" modifiers="1" timestamp="1628670186053"/>
+    <typeInfo handle="=ShopmeCommon/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shopme.common.entity{Product.java[Product" modifiers="1" timestamp="1629673609141"/>
+    <typeInfo handle="=ShopmeBackend/C:\/Users\/Vishal Sharma\/.m2\/repository\/org\/hibernate\/hibernate-core\/5.4.30.Final\/hibernate-core-5.4.30.Final.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.hibernate=/=/maven.artifactId=/hibernate-core=/=/maven.version=/5.4.30.Final=/=/maven.scope=/compile=/&lt;org.hibernate.dialect(MySQL8Dialect.class[MySQL8Dialect" modifiers="33" timestamp="1620674878164"/>
 </typeInfoHistroy>

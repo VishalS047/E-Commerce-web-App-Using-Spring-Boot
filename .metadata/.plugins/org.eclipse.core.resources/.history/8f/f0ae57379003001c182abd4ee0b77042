@@ -1,0 +1,62 @@
+package com.shopme.product;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.shopme.common.entity.Category;
+import com.shopme.common.entity.Product;
+import com.shopme.service.CategoryService;
+import com.shopme.service.ProductService;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	private CategoryService categoryService;
+	
+	@Autowired
+	private ProductService productService;
+
+	@GetMapping(path = "/c/{category_alias}")
+	public String viewCategory(@PathVariable("category_alias") String alias, Model model, @PathVariable("pageNum") int pageNum) {
+
+		Category category = this.categoryService.getEnabledCategory(alias);
+
+		if (category == null) {
+			return "error/404";
+		}
+		
+		List<Category> categoryParents = this.categoryService.getCategoryParents(category);
+		
+		Page<Product> pageProducts = this.productService.listByCategory(category.getCid(), 1);
+			
+		
+		long startCount = (pageNum - 1) * ProductService.PRODUCTS_PER_PAGE + 1;
+		long endCount = startCount + ProductService.PRODUCTS_PER_PAGE - 1;
+
+		if (endCount > pageProducts.getTotalElements()) {
+			endCount = pageProducts.getTotalElements();
+		}
+
+
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("totalPages", pageProducts.getTotalPages());
+		model.addAttribute("totalItems", pageProducts.getTotalElements());
+		model.addAttribute("categoryParents", categoryParents);
+		model.addAttribute("catName", category.getName());
+		model.addAttribute("pageTitle", category.getName());
+		
+//		System.out.println(category.getName());
+
+		return "products_by_category";
+	}
+	
+}

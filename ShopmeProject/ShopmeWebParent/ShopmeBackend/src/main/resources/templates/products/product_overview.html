@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <body>
 	
@@ -9,7 +9,8 @@
 		<div class="form-group row">
 			<label for="name" class="col-sm-4 col-form-label">PRODUCT NAME</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control" th:field="*{name}" name="name" id="name" required="required"  minlength="3" maxlength="256" />
+				<input type="text" class="form-control" th:field="*{name}" name="name" id="name" required="required"  minlength="3" maxlength="256" 
+				th:readonly="${#authorization.expression('hasAuthority(''Salesperson'')')}"/>
 			</div>
 		</div>
 		
@@ -19,6 +20,7 @@
 			
 			<div class="col-sm-8">
 				<input type="text" class="form-control" th:field="*{alias}" name="alias" id="alias"
+				th:readonly="${#authorization.expression('hasAuthority(''Salesperson'')')}"
 				placeholder="Default is product-name (Any space will be replaced by dash)"
 				minlength="3" maxlength="256" />
 			</div>
@@ -32,16 +34,28 @@
 			
 			<div class="col-sm-8">
 			
-				<select th:field="*{brand}" class="form-control" required="required" name="brand" id="brand">
-				
-					<th:block th:each="brand : ${listBrands}">
+				<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+			
+					<select th:field="*{brand}" class="form-control" required="required" name="brand" id="brand">
 					
-						<option th:value="${brand.brandId}">[[${brand.brandName}]]</option>
+						<th:block th:each="brand : ${listBrands}">
 						
-					</th:block>
-					
-				</select>
+							<option th:value="${brand.brandId}">[[${brand.brandName}]]</option>
+							
+						</th:block>
+						
+					</select>
+				
+				</th:block>
+				
+				<th:block sec:authorize="hasAnyAuthority('Salesperson')">
+			
+					<input type="text" class="form-control" th:value="${product.brand.brandName}" readonly="readonly"/>
+				
+				</th:block>
+				
 			</div>
+			
 		</div>
 		
 		
@@ -52,25 +66,37 @@
 			
 			<div class="col-sm-8">
 			
-				<th:block th:if="${product.category != null}">
+				<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
 			
-					<select th:field="*{category}" class="form-control" required="required">
+					<th:block th:if="${product.category != null}">
 					
-						<th:block th:each=" cat : ${product.brand.categories}">
+						<select th:field="*{category}" class="form-control" required="required">
 						
-							<option th:value="${cat.cid}">[[${cat.name}]]</option>
+							<th:block th:each=" cat : ${product.brand.categories}">
 							
-						</th:block>
+								<option th:value="${cat.cid}">[[${cat.name}]]</option>
+								
+							</th:block>
+							
+						</select>
+				
+					</th:block>
+				
+				
+				
+					<th:block th:if="${product.category == null}">
 						
-					</select>
-			
+						<select th:field="*{category}" class="form-control" required="required" name="category" id="category">
+					
+						</select>
+					
+					</th:block>
+				
 				</th:block>
 				
-				<th:block th:if="${product.category == null}">
-					
-					<select th:field="*{category}" class="form-control" required="required" name="category" id="category">
-				
-					</select>
+				<th:block sec:authorize="hasAnyAuthority('Salesperson')">
+			
+					<input type="text" class="form-control" th:value="${product.category.name}" readonly="readonly"/>
 				
 				</th:block>
 				
@@ -83,7 +109,8 @@
 		
 			<label for="isenabled" class="form-label col-sm-4 col-form-level">ENABLED</label>
 			<div class="col-sm-8">
-				<input type="checkbox" id="isenabled" name="enabled" th:field="*{enabled}" />
+				<input type="checkbox" id="isenabled" name="enabled" th:field="*{enabled}" 
+				th:disabled="${#authorization.expression('hasAuthority(''Salesperson'')')}"/>
 			</div>		
 		</div>
 		
@@ -92,7 +119,8 @@
 		
 			<label for="instock" class="form-label col-sm-4 col-form-level">IN-STOCK</label>
 			<div class="col-sm-8">
-				<input type="checkbox" id="instock" name="instock" th:field="*{inStock}" />
+				<input type="checkbox" id="instock" name="instock" th:field="*{inStock}" 
+				th:disabled="${#authorization.expression('hasAuthority(''Salesperson'')')}" />
 			</div>		
 		</div>
 		
