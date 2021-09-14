@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.shopme.categorycsvExporter.CategoryCsvExporter;
 import com.shopme.categoryinfo.CategoryPageInfo;
 import com.shopme.common.entity.Category;
-import com.shopme.exception.CategoryNotFoundException;
+import com.shopme.common.exception.CategoryNotFoundException;
 import com.shopme.service.CategoryService;
 import com.shopme.util.FileUploadUtil;
 

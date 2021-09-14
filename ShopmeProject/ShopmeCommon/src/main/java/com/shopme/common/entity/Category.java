@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -42,6 +43,7 @@ public class Category {
 	private Category parent;
 
 	@OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
+	@OrderBy("name asc")
 	private Set<Category> children = new HashSet<>();
 
 	public static Category copyIdandName(Category category) {

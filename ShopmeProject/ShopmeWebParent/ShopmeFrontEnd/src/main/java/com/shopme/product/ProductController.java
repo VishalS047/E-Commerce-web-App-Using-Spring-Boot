@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.Product;
+import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.service.CategoryService;
 import com.shopme.service.ProductService;
 
@@ -33,7 +34,7 @@ public class ProductController {
 			@PathVariable("pageNum") int pageNum) {
 
 		try {
-			
+
 			Category category = this.categoryService.getEnabledCategory(alias);
 
 			List<Category> categoryParents = this.categoryService.getCategoryParents(category);
@@ -59,13 +60,30 @@ public class ProductController {
 			model.addAttribute("pageTitle", category.getName());
 			model.addAttribute("listOfProducts", listOfProducts);
 			model.addAttribute("category", category);
-			
-			return "products_by_category";
+
+			return "products/products_by_category";
 		} catch (Exception e) {
-			
-			return "error/404"; 
+
+			return "error/404";
 		}
-		
+
+	}
+
+	@GetMapping(path = "/p/{p_alias}")
+	public String viewProductDetail(@PathVariable("p_alias") String alias, Model model)
+			throws ProductNotFoundException {
+		try {
+			Product product = this.productService.getProduct(alias);
+			List<Category> categoryParents = this.categoryService.getCategoryParents(product.getCategory());
+
+			model.addAttribute("product", product);
+			model.addAttribute("pageTitle", product.getShortName());
+			model.addAttribute("categoryParents", categoryParents);
+			return "products/product_details";
+		} catch (ProductNotFoundException e) {
+			return "error/404";
+		}
+
 	}
 
 }

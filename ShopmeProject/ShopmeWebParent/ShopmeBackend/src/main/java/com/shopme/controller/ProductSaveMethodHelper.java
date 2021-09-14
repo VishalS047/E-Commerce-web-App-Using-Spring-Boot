@@ -17,7 +17,7 @@ import com.shopme.common.entity.ProductImage;
 import com.shopme.util.FileUploadUtil;
 
 public class ProductSaveMethodHelper {
-	
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
 	public static void deleteExtraImagesThatAreRemovedOnForm(Product product) {
@@ -70,7 +70,8 @@ public class ProductSaveMethodHelper {
 		product.setImages(images);
 	}
 
-	public static  void setProductDetails(String[] detailIDs, String[] detailNames, String[] detailValues, Product product) {
+	public static void setProductDetails(String[] detailIDs, String[] detailNames, String[] detailValues,
+			Product product) {
 
 		if (detailNames == null || detailNames.length == 0) {
 			return;

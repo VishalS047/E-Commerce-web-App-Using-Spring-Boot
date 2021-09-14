@@ -23,7 +23,8 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "products_table")
-public class Product {
+public class Product
+ {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -275,7 +276,7 @@ public class Product {
 		this.details.add(new ProductDetails(id, productName, productValue, this));
 	}
 	
-	
+	@Transient
 	public String getMainImagePath() {
 		if(this.id == null || this.mainImage == null)
 			return "/images/image-thumbnail.png";

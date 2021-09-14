@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.shopme.common.entity.Brand;
 import com.shopme.common.entity.Category;
 import com.shopme.common.entity.Product;
-import com.shopme.exception.ProductNotFoundException;
+import com.shopme.common.exception.ProductNotFoundException;
 import com.shopme.security.ShopifyUserDetails;
 import com.shopme.service.BrandService;
 import com.shopme.service.CategoryService;
@@ -123,11 +123,12 @@ public class ProductController {
 			@AuthenticationPrincipal ShopifyUserDetails loggedUser) throws IOException {
 
 		
-		if(loggedUser.hasRole("Salesperson")) {
-			this.productService.saveProductPrice(product);
-			attributes.addFlashAttribute("message", "The product has been saved successfully");
-
-			return "redirect:/products";
+		if (!loggedUser.hasRole("Admin") && !loggedUser.hasRole("Editor")) {
+			if (loggedUser.hasRole("Salesperson")) {
+				productService.saveProductPrice(product);
+				attributes.addFlashAttribute("message", "The product has been saved successfully.");			
+				return "redirect:/products";
+			}
 		}
 		
 		ProductSaveMethodHelper.setMainImageName(mainImageMultipart, product);

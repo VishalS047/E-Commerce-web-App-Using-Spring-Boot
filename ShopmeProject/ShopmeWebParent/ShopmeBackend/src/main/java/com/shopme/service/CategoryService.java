@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.shopme.admin.user.CategoryRepository;
 import com.shopme.categoryinfo.CategoryPageInfo;
 import com.shopme.common.entity.Category;
-import com.shopme.exception.CategoryNotFoundException;
+import com.shopme.common.exception.CategoryNotFoundException;
 
 @Service
 @Transactional

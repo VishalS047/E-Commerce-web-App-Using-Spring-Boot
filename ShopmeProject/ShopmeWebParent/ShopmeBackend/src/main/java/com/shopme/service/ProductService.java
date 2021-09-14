@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.shopme.admin.user.ProductRepository;
 import com.shopme.common.entity.Product;
-import com.shopme.exception.ProductNotFoundException;
+import com.shopme.common.exception.ProductNotFoundException;
 
 @Service
 @Transactional
@@ -86,7 +86,6 @@ public class ProductService {
 		productInDB.setPrice(productUsedInForm.getPrice());
 		productInDB.setDiscountPercentage(productUsedInForm.getDiscountPercentage());
 		this.productRepository.save(productInDB);
-
 	}
 
 	public String checkUnique(Integer id, String name) {
