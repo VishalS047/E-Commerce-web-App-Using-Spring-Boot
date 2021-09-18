@@ -39,33 +39,10 @@
 			
 			<div class="container-fluid">
 				<div class="row">
-				<th:block th:each="product : ${listOfProducts}">
-					<div class="col-xl-2">
-						<div class="card m-2">
-							<div class="card-body text-center">
-								<a th:href="@{'/p/'+${product.alias}}">
-									<img th:src="@{${product.getMainImagePath}}" alt="product" width="200" height="150"/>
-									&nbsp;
-									<hr />
-									<strong>[[${product.shortName}]]</strong>
-								</a>
-							</div>
-							<div th:if="${product.discountPercentage <= 0}">
-								<strong>&#8377;[[${product.cost}]]</strong>
-								<del><strong>&#8377;[[${product.cost}]]</strong></del>
-								<strong style="color: green;">[[${product.getDiscountPercentage}]]&#37; off</strong>
-							</div>
-							
-							<div th:if="${product.discountPercentage > 0}">
-								<strong style="color: darkred">&#8377;[[${product.getDiscountPrice}]]</strong>
-								&nbsp;<del><strong>&#8377;[[${product.price}]]</strong></del>
-								<strong style="color: green;">[[${product.getDiscountPercentage}]]&#37; off</strong>
-							</div>
-						</div>
-					</div>
-				</th:block>
-			</div>
-				
+					<th:block th:each="product : ${listOfProducts}">
+						<div th:replace="products/product_info :: content"></div>
+					</th:block>
+				</div>
 			</div>
 				
 				
@@ -78,9 +55,6 @@
 				&nbsp;
 				&nbsp;
 				&nbsp;
-				
-				
-				
 				
 				<div th:replace="navigationfragment :: footer_menu"></div>
 

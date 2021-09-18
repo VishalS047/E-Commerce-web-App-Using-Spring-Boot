@@ -6,7 +6,9 @@
 			<div class="container-fluid">
 			
 				<div th:replace="navigationfragment :: header_menu"></div>
-				<hr />
+				
+				<div th:replace="navigationfragment :: search_nav"></div>
+				
 				<div class="" th:replace="breadcrumb :: breadcrumbcontent"></div>
 					
 			</div>		
@@ -39,7 +41,7 @@
 					
 						<div class="">
 						
-							<h1>[[${product.name}]]</h1>
+							<h2>[[${product.name}]]</h2>
 							
 						</div>
 						
