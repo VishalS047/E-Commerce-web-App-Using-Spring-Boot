@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head
+	th:replace="fragments :: page_header('Settings - Shopify Admin')"></head>
+	<link rel="stylesheet" th:ref="@{/richtext/richtext.min.css}">
+	<script th:src="@{/richtext/jquery.min.js}"></script>
+<body>
+	<div class="container-fluid">
+
+		<div th:replace="navigationfragment ::  menu"></div>
+		<div>
+			<h2 class="text-center">Settings</h2>
+		</div>
+		
+		<div th:if="${message!=null}" class="alert alert-success text-center m-3">
+			[[${message}]]
+		</div>
+			
+			<div class="container">
+					
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" id="settingTab" role="tablist">
+					
+					  <li class="nav-item" role="presentation">
+					  
+					    <a class="nav-link active"  data-toggle="tab" href="#general" role="tab">General</a>
+					    
+					  </li>
+					  
+					  <li class="nav-item" role="presentation">
+					  
+					    <a class="nav-link"  data-toggle="tab" href="#countries" role="tab">Countries</a>
+					    
+					  </li>
+					  
+					  <li class="nav-item" role="presentation">
+					  
+					    <a class="nav-link" data-toggle="tab" href="#states" role="tab">States</a>
+					    
+					  </li>
+					  
+					  <li class="nav-item" role="presentation">
+					  
+					    <a class="nav-link" data-toggle="tab" href="#mailServer" role="tab">Mail Server</a>
+					    
+					  </li>
+					  
+					  <li class="nav-item" role="presentation">
+					  
+					    <a class="nav-link" data-toggle="tab" href="#mailTemplates" role="tab">Mail Templates</a>
+					    
+					  </li>
+					  
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+					
+					  <div class="tab-pane active m-5" id="general" role="tabpanel">
+					  		<div th:replace="settings/general :: content"></div>
+					  </div>
+					  
+					  <div class="tab-pane m-3 p-3" id="countries" role="tabpanel">
+					  		<div th:replace="settings/countries :: content"></div>	
+					  </div>
+					  
+					  <div class="tab-pane m-5" id="states" role="tabpanel">
+					  		<div th:replace="settings/states :: content"></div>	
+					  </div>
+					  
+					  <div class="tab-pane m-4" id="mailServer" role="tabpanel">
+						  	<div th:replace="settings/mailserver :: content"></div> 
+					  </div>
+					  
+					  
+					  <div class="tab-pane m-3" id="mailTemplates" role="tabpanel">
+					  		<div th:replace="settings/mail_templates/mail_templates :: content"></div>				  	
+					  </div>
+					  
+					</div>
+					
+					
+					<div class="toast justify-content-center d-flex" role="alert" aria-live="polite" aria-atomic="true" data-delay="4000">
+		  				<div role="alert" aria-live="assertive" aria-atomic="true">
+		  					<div class="toast-body">
+		  						<span id="toastMessage"></span>
+		  					</div>
+		  				</div>
+					</div>
+					
+				</div>
+
+		</div>
+			
+		
+		<div th:replace=" fragments :: footer"></div>
+
+<script type="text/javascript">
+	contextPath = "[[@{/}]]"
+	var csrfHeader = "[[${_csrf.headerName}]]";
+	var csrfValue = "[[${_csrf.Token}]]";
+	$(document).ready(function() {
+		$("#customerVerificationContent").richText();
+	});
+</script>
+
+<script type="text/javascript" th:src="@{/js/common_form.js}"></script>
+<script type="text/javascript" th:src="@{/js/countries_settings.js}"></script>
+<script type="text/javascript" th:src="@{/js/state_settings.js}"></script>
+</body>
+
+</html>

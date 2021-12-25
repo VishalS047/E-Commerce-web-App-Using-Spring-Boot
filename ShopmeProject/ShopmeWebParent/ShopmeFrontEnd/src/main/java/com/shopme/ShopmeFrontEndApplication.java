@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan({ "com.shopme.product", "com.shopme.controller", "com.shopme.service", "com.shopme.security",
-				 "com.shopme.category", "com.shopme.mvcconfiguration" })
+				 "com.shopme.category", "com.shopme.mvcconfiguration", "com.shopme.setting"})
 public class ShopmeFrontEndApplication {
 
 	public static void main(String[] args) {

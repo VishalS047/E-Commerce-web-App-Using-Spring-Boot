@@ -46,16 +46,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-		.antMatchers("/users/**").hasAuthority("Admin")
-		.antMatchers("/categories/**", "/brands/**").hasAnyAuthority("Admin", "Editor")
-		.antMatchers("/products/newproduct", "/product/delete/**").hasAnyAuthority("Admin", "Editor")
-		.antMatchers("/product/edit/**", "/products/save", "/products/checkUnique").hasAnyAuthority("Admin", "Editor", "Salesperson")
-		.antMatchers("/products", "/products/", "/product/detail/**", "/products/page/**").hasAnyAuthority("Admin", "Editor", "Salesperson", "Shipper")
-		.antMatchers("/products/**").hasAnyAuthority("Admin", "Editor")
-		.antMatchers("/products/**", "/product/**").hasAnyAuthority("Admin", "Editor", "Salesperson")
-		.anyRequest().authenticated().and().formLogin().loginPage("/login")
-		.usernameParameter("email").permitAll().and().logout().permitAll();
+		http.authorizeRequests().antMatchers("/users/**").hasAuthority("Admin")
+				.antMatchers("/categories/**", "/brands/**").hasAnyAuthority("Admin", "Editor")
+				.antMatchers("/products/newproduct", "/product/delete/**").hasAnyAuthority("Admin", "Editor")
+				.antMatchers("/product/edit/**", "/products/save", "/products/checkUnique")
+				.hasAnyAuthority("Admin", "Editor", "Salesperson")
+				.antMatchers("/products", "/products/", "/product/detail/**", "/products/page/**")
+				.hasAnyAuthority("Admin", "Editor", "Salesperson", "Shipper").antMatchers("/products/**")
+				.hasAnyAuthority("Admin", "Editor").antMatchers("/products/**", "/product/**")
+				.hasAnyAuthority("Admin", "Editor", "Salesperson").anyRequest().authenticated().and().formLogin()
+				.loginPage("/login").usernameParameter("email").permitAll().and().logout().permitAll();
 	}
 
 	@Override

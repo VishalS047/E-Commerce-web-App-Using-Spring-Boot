@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments :: page_header(${pageTitle})"/>
+	
+	<body>
+			<div class="container-fluid">
+				<div th:replace="navigationfragment :: header_menu"></div>
+					
+					<div class="text-center m-3">
+						<h1>Customer Registration</h1>
+						<h3>You have successfully registered as a customer.</h3>
+						<p>Please check your email to verify your account</p>
+						<p><a th:href="@{/login}">Login Here</a></p>
+					</div>
+				
+			</div>
+				
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				
+				<div th:replace="navigationfragment :: footer_menu"></div>
+	</body>
+	
+</html>
