@@ -1,5 +1,6 @@
 # E-Commerce-web-App-Using-Spring-Boot
-# Images are for reference. THis project is yet to complete.
+# Images are for reference.
+# Tech used: Spring Boot, ThymeLeaf, JPA, Oracle 11G, BootStrap, JavaScript, Html, CSS, JQuery, Spring Security.
 ![Screenshot 2022-04-02 082837](https://user-images.githubusercontent.com/60310547/161363494-492c6d71-32eb-4279-8ebc-69cd6b4253bb.jpg)
 ![Screenshot 2022-04-02 083008](https://user-images.githubusercontent.com/60310547/161363496-b2c38176-e4b1-4704-9ffc-cecc74e0c793.jpg)
 ![Screenshot 2022-04-02 083028](https://user-images.githubusercontent.com/60310547/161363499-239c1832-952d-4d65-91f7-dc5315accc1b.jpg)
